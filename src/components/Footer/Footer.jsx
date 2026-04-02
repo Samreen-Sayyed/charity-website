@@ -35,7 +35,7 @@ function Footer() {
                 </div>
                 <div className='contact-container'>
                     <h2>Contact</h2>
-                    <p>Would you have any enquiries. Please feel free to contuct us</p>
+                    <p>Would you have any enquiries. Please feel free to contact us</p>
                     <p><FiMail /> &nbsp;charitio@gmail.com</p>
                     <p> <FiPhoneCall /> &nbsp;+888 (123) 869523</p>
                     <p> <TiLocation /> &nbsp;New York – 1075 Firs Avenue</p>
