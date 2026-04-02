@@ -1,0 +1,441 @@
+.navbar-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar-container a {
+    text-decoration: none;
+}
+
+@media screen and (min-device-width: 1440px) {
+    .dropbtn {
+        background-color: #fff;
+        color: white;
+        padding: 20px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 99;
+        text-align: left;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .ham-menu {
+        display: none;
+    }
+
+    .img-container {
+        width: 240px;
+        height: 100px;
+    }
+
+    .center-buttons {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        text-align: center;
+    }
+
+    .center-buttons a {
+        color: #232F4B;
+    }
+
+    .dropdown-content-navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        list-style: none;
+    }
+
+    .hover-underline-animation {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        color: black;
+        margin: 10px 0px 10px 10px;
+        cursor: pointer;
+    }
+
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #FD7E14;
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .center-buttons a:hover {
+        color: #FD7E14;
+    }
+
+    .center-buttons button {
+        margin: 0px;
+        font-size: 25px;
+        padding: 35px 20px;
+        border: none;
+        background-color: #fff;
+    }
+
+    .center-buttons button:hover {
+        border-bottom: 3.5px solid #FD7E14;
+        color: #FD7E14;
+        transform: scaleX(1)
+    }
+
+    .right-buttons button {
+        margin: 15px;
+        font-size: 25px;
+        padding: 35px 20px;
+    }
+
+    .right-buttons a {
+        text-decoration: none;
+    }
+
+    .right-buttons {
+        grid-column-start: 3;
+        grid-column-end: 3;
+        text-align: right;
+    }
+
+    #donate-btn a {
+        color: white;
+    }
+
+    #donate-btn {
+        background: linear-gradient(270deg, rgba(239, 95, 52, .75), #E34212);
+        color: #fff;
+        font-weight: 500;
+        border-radius: 6px;
+        border: none;
+        padding: 20px;
+    }
+
+    #donate-btn:hover {
+        background: linear-gradient(270deg, #E34212, rgba(239, 95, 52, .75));
+    }
+
+    #search-nav {
+        font-weight: 500;
+        padding: 18px;
+        border: none;
+        border-radius: 6px;
+        background-color: #C9F0EB;
+        color: #232F4B;
+    }
+
+    #search-nav a {
+        color: #232F4B;
+    }
+}
+
+@media screen and (min-device-width: 1024px) and (max-device-width:1439px) {
+    .ham-menu {
+        display: none;
+    }
+
+    .dropbtn {
+        background-color: #fff;
+        color: white;
+        padding: 20px;
+        font-size: 16px;
+        border: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 99;
+        text-align: left;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content-navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0px;
+        list-style: none;
+    }
+
+    .hover-underline-animation {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        color: black;
+        margin: 10px 0px 10px 10px;
+        cursor: pointer;
+    }
+
+    .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 40%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: #FD7E14;
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .img-container {
+        width: 220px;
+        height: 80px;
+    }
+
+    .img-container img {
+        width: 220px;
+        height: 80px;
+    }
+
+    .center-buttons {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        text-align: center;
+    }
+
+    .center-buttons a {
+        color: #232F4B;
+    }
+
+    .center-buttons a:hover {
+        color: #FD7E14;
+    }
+
+    .center-buttons button {
+        margin: 0px;
+        font-size: 20px;
+        padding: 35px 20px;
+        border: none;
+        background-color: #fff;
+    }
+
+    .center-buttons button:hover {
+        border-bottom: 3.5px solid #FD7E14;
+        color: #FD7E14;
+        transform: scaleX(1)
+    }
+
+    .right-buttons button {
+        margin: 15px;
+        font-size: 20px;
+        padding: 28px 16px;
+    }
+
+    .right-buttons a {
+        text-decoration: none;
+    }
+
+    .right-buttons {
+        grid-column-start: 3;
+        grid-column-end: 3;
+        text-align: right;
+    }
+
+    #donate-btn a {
+        color: white;
+    }
+
+    #donate-btn {
+        background: linear-gradient(270deg, rgba(239, 95, 52, .75), #E34212);
+        color: #fff;
+        font-weight: 500;
+        border-radius: 6px;
+        border: none;
+        padding: 16px;
+    }
+
+    #donate-btn:hover {
+        background: linear-gradient(270deg, #E34212, rgba(239, 95, 52, .75));
+    }
+
+    #search-nav {
+        font-weight: 500;
+        padding: 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #C9F0EB;
+        color: #232F4B;
+    }
+
+    #search-nav a {
+        color: #232F4B;
+    }
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width:1023px) {
+    .ham-menu {
+        grid-column: 1/1;
+        align-self: center;
+        text-align: left;
+        margin-left: 18px;
+    }
+
+    .img-container {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        text-align: center;
+    }
+
+    .right-buttons {
+        grid-column: 3/3;
+        align-self: center;
+        text-align: right;
+        margin-right: 18px;
+    }
+
+    #search-nav {
+        font-weight: 500;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 6px;
+        background-color: #C9F0EB;
+        color: #232F4B;
+    }
+
+    #search-nav a {
+        color: #232F4B;
+    }
+
+    #charitioLogo {
+        width: 150px;
+        height: 60px;
+    }
+
+    .center-buttons {
+        display: none;
+    }
+
+    #donate-btn {
+        display: none;
+    }
+
+    .navbar {
+        position: sticky;
+        z-index: 555;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border: none;
+    }
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    .ham-menu {
+        grid-column: 1/1;
+        align-self: center;
+        text-align: center;
+    }
+
+    .img-container {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        text-align: center;
+    }
+
+    .right-buttons {
+        grid-column: 3/3;
+        align-self: center;
+        text-align: center;
+    }
+
+    #search-nav {
+        font-weight: 500;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background-color: #C9F0EB;
+        color: #232F4B;
+    }
+
+    #search-nav a {
+        color: #232F4B;
+    }
+
+    #charitioLogo {
+        width: 120px;
+        height: 60px;
+    }
+
+    .center-buttons {
+        display: none;
+    }
+
+    #donate-btn {
+        display: none;
+    }
+
+    .navbar {
+        position: sticky;
+        z-index: 555;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border: none;
+    }
+}
