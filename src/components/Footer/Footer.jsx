@@ -15,7 +15,7 @@ function Footer() {
             <div className='upper-container'>
                 <div className='logo-container'>
                     <img src={CharitioLogoFooter} alt="" className='logo-footer' />
-                    <p>Welcome and open yourself to your truest love this year with us! With the Release Process</p>
+                    <p>Welcome to Malegoan Education Society</p>
                     <div className='button-container'>
                         <button> <FiFacebook size={20} /> </button>
                         <button> <FiTwitter size={20} /> </button>
