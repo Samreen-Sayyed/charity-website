@@ -4,23 +4,35 @@ import Home from "./components/Home/Home";
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
+import Projects from './components/Projects/Projects';
+import Scholarship from './components/Scholarship/Scholarship';
+import MemberType from './components/MemberType/MemberType';
+import MemberData from './components/MemberData/MemberData';
 
 function App() {
   return (
-    <div>
-      <BrowserRouter >
+    <div className="app-container">
+      <BrowserRouter>
         <Navbar />
-        <Routes >
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
+
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/scholarship" element={<Scholarship />} />
+            <Route path="/member-type" element={<MemberType />} />
+            <Route path="/member-data" element={<MemberData />} />
+          </Routes>
+        </div>
+
         <Footer />
       </BrowserRouter>
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,22 @@
+.projects-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.projects-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #232F4B;
+}
+
+.projects-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
