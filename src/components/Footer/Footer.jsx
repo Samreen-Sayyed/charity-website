@@ -1,11 +1,12 @@
 import React from 'react'
-import CharitioLogoFooter from '../Images/charitio-logo-footer.png'
+import CharitioLogoFooter from '../Images/MSEFooterLogoo.png'
 import pic1 from '../Images/pic1.png'
 import pic2 from '../Images/pic2.png'
 import pic3 from '../Images/pic3.png'
 import pic4 from '../Images/pic4.png'
 import pic5 from '../Images/pic5.png'
 import pic6 from '../Images/pic6.png'
+
 import '../Footer/Footer.css'
 import { FiFacebook, FiTwitter, FiInstagram, FiMail, FiPhoneCall, FiTarget } from 'react-icons/fi'
 import { TiSocialGooglePlus, TiLocation } from 'react-icons/ti'

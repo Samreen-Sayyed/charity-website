@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./firstSection.css";
-import bg from "../../../Images/kid4.jpg";
+import bg from "../../../Images/kid5.png";
 import { FaBookOpen, FaUsers, FaGraduationCap, FaHeart } from "react-icons/fa";
 
 function FirstSection() {

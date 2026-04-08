@@ -1,6 +1,6 @@
 .hero-wrapper {
   position: relative;
-  height: 90vh;
+  height: 75vh; /* 🔥 reduced from 90vh */
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -14,8 +14,8 @@
   inset: 0;
   background: linear-gradient(
     110deg,
-    rgba(0,0,0,0.65) 30%,
-    rgba(0,0,0,0.3) 70%
+    rgba(0,0,0,0.35) 30%,
+    rgba(0,0,0,0.15) 70%
   );
   z-index: 1;
 }
@@ -23,7 +23,7 @@
 /* CONTENT */
 .hero-content {
   position: absolute;
-  top: 30%;
+  top: 35%; /* 🔥 adjusted */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -32,7 +32,7 @@
 
 /* HEADINGS */
 .main-heading {
-  font-size: 65px;
+  font-size: 55px;
   font-weight: 800;
   color: white;
   text-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -47,8 +47,9 @@
   color: #facc15;
 }
 
+/* 🔥 REDUCED GAP */
 .mission-heading {
-  margin-top: 20px;
+  margin-top: 8px;
   color: white;
   font-size: 26px;
 }
@@ -56,7 +57,7 @@
 /* STATS CONTAINER */
 .stats-container {
   position: absolute;
-  bottom: 30px;
+  bottom: 50px; /* 🔥 moved UP */
   left: 50%;
   transform: translateX(-50%);
 
@@ -79,7 +80,7 @@
 
   width: 260px;
 
-  background: linear-gradient(135deg, #f59e0b, #f97316); /* 🔥 ORANGE GRADIENT */
+  
   color: white;
 
   position: relative;
@@ -87,6 +88,24 @@
 
   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   transition: 0.3s;
+}
+
+/* 🎨 MEDIUM BALANCED GRADIENT COLORS */
+
+.modern-card:nth-child(1) {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24); /* orange-yellow */
+}
+
+.modern-card:nth-child(2) {
+  background: linear-gradient(135deg, #3b82f6, #60a5fa); /* blue */
+}
+
+.modern-card:nth-child(3) {
+  background: linear-gradient(135deg, #10b981, #34d399); /* green */
+}
+
+.modern-card:nth-child(4) {
+  background: linear-gradient(135deg, #ec4899, #f472b6); /* pink */
 }
 
 .modern-card:hover {
@@ -109,7 +128,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(86, 12, 4, 0.2); /* lighter overlay */
+  background: rgba(86, 12, 4, 0.2);
 
   display: flex;
   align-items: center;
@@ -117,6 +136,7 @@
 
   font-size: 22px;
 }
+
 /* TEXT */
 .modern-content h2 {
   font-size: 26px;

@@ -1,7 +1,6 @@
 .projects-container {
   width: 100%;
-  min-height: 100vh;
-  padding: 40px 20px;
+  padding: 40px 20px; /* ❌ removed min-height */
 }
 
 .projects-content {
