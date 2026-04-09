@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './fourthSection.css'
 
 import Education from "../../../Images/education.png"
-import Scholarship from "../../../Images/Scholarship.png"
+import money from "../../../Images/money.png"
 import FourthMedicine from "../../../Images/medicine_fourth.png"
 
 import AOS from "aos";
@@ -54,7 +54,7 @@ const FourthSection = () => {
                         {/* SCHOLARSHIP */}
                         <div className='card' data-aos="fade-up" data-aos-delay="200">
                             <img 
-                                src={Scholarship} 
+                                src={money} 
                                 className="img-template" 
                                 alt="students receiving scholarships"
                             />
