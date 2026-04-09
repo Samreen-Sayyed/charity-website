@@ -1,12 +1,12 @@
 .hero-wrapper {
   position: relative;
-  min-height: 100vh; /* 🔥 FIXED */
+  min-height: 50vh; 
   height: auto;
   background-size: cover;
   background-position: center;
   overflow: hidden;
   margin-bottom: 100px;
-  padding-bottom: 120px; /* 🔥 space for cards */
+  padding-bottom: 120px; 
 }
 
 /* OVERLAY */
@@ -24,10 +24,10 @@
 
 /* CONTENT */
 .hero-content {
-  position: relative; /* 🔥 FIXED */
+  position: relative; 
   z-index: 2;
   text-align: center;
-  padding-top: 120px; /* 🔥 spacing */
+  padding-top: 75px; 
 }
 
 /* HEADINGS */
@@ -55,9 +55,9 @@
 
 /* STATS CONTAINER */
 .stats-container {
-  position: relative; /* 🔥 FIXED */
+  position: relative; 
   display: flex;
-  flex-wrap: wrap; /* 🔥 IMPORTANT */
+  flex-wrap: wrap; 
   gap: 25px;
   width: 100%;
   justify-content: center;
@@ -73,8 +73,8 @@
   padding: 20px 25px;
   border-radius: 20px;
 
-  width: 100%;          /* 🔥 FIXED */
-  max-width: 260px;     /* 🔥 keeps same design */
+  width: 100%;          
+  max-width: 260px;     
 
   color: white;
 
@@ -88,19 +88,19 @@
 /* 🎨 MEDIUM BALANCED GRADIENT COLORS */
 
 .modern-card:nth-child(1) {
-  background: linear-gradient(135deg, #ffa30f, #86590c);
+  background: linear-gradient(135deg, #ffbe56, #86590c);
 }
 
 .modern-card:nth-child(2) {
-  background: linear-gradient(135deg,#60a5fa, #263d61);
+  background: linear-gradient(135deg,#8ec1ff, #263d61);
 }
 
 .modern-card:nth-child(3) {
-  background: linear-gradient(135deg, #24c891, #0b4d33);
+  background: linear-gradient(135deg, #54ffc6, #0b4d33);
 }
 
 .modern-card:nth-child(4) {
-  background: linear-gradient(135deg, #e95ca3, #5d163a);
+  background: linear-gradient(135deg, #ff7cbe, #5d163a);
 }
 
 .modern-card:hover {

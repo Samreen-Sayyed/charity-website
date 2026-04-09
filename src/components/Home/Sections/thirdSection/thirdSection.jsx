@@ -1,41 +1,92 @@
-import React from "react";
-import pictureThirdSection from "../../../Images/third-section-picture.png";
+import React, { useEffect } from "react";
+import pictureThirdSection from "../../../Images/thirdsection.png";
 import "../thirdSection/thirdSection.css";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-function thirdSection() {
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
+
+function ThirdSection() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+    });
+  }, []);
+
   return (
     <div className="home-third-section">
       <div className="third-container">
-        <div className="left-third-section">
-          <img src={pictureThirdSection} alt="picture third section" />
+
+        {/* LEFT IMAGE */}
+        <div className="left-third-section" data-aos="fade-right">
+
+          {/* 🔶 SHAPES */}
+          <div className="shape shape-green"></div>
+          <div className="shape shape-orange"></div>
+
+          <img src={pictureThirdSection} alt="About section" />
         </div>
-        <div className="right-third-section">
-          <h4>About Us</h4>
-          <h2>We Can Save More Lifes With Your Helping Hand.</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
-          </p>
+
+        {/* RIGHT CONTENT */}
+        <div className="right-third-section" data-aos="fade-left">
+
+          <h4 data-aos="fade-up">About Us</h4>
+
+          {/* MISSION */}
+          <h3 className="about-subheading" data-aos="fade-up">
+            Our Mission
+          </h3>
           <ul>
-            <li>
-              <AiOutlineCheckCircle /> The standard chunk of Lorem Ipsum used
-              since.
+            <li data-aos="fade-up">
+              <AiOutlineCheckCircle /> Establish schools, colleges, libraries, hostels.
             </li>
-            <li>
-              <AiOutlineCheckCircle /> Randomised words which don't look even
-              slightly believable.
+            <li data-aos="fade-up">
+              <AiOutlineCheckCircle /> Support deserving students.
             </li>
-            <li>
-              <AiOutlineCheckCircle /> Making this the first true generator on
-              the Internet.
+            <li data-aos="fade-up">
+              <AiOutlineCheckCircle /> Provide scholarships and financial aid.
             </li>
           </ul>
-          <button>More About</button>
+
+          {/* VISION */}
+          <h3 className="about-subheading" data-aos="fade-up">
+            Our Vision
+          </h3>
+          <p data-aos="fade-up">
+            To build a community enriched with education and strong values.
+          </p>
+
+          {/* VALUES */}
+          <h3 className="about-subheading" data-aos="fade-up">
+            Our Values
+          </h3>
+          <div className="values-container">
+            <span data-aos="zoom-in">Empathy</span>
+            <span data-aos="zoom-in">Compassion</span>
+            <span data-aos="zoom-in">Fairness</span>
+            <span data-aos="zoom-in">Transparency</span>
+            <span data-aos="zoom-in">Respect</span>
+            <span data-aos="zoom-in">Generosity</span>
+          </div>
+
+          {/* BUTTON */}
+          <button
+            className="about-btn"
+            data-aos="zoom-in"
+            onClick={() => navigate("/about")}
+          >
+            More About
+          </button>
+
         </div>
+
       </div>
     </div>
   );
 }
-export default thirdSection;
+
+export default ThirdSection;

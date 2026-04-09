@@ -1,6 +1,6 @@
 /* ===== Section spacing ===== */
 .home-second-section {
-  margin-top: -100px; /* 🔥 was too much (-100), now balanced */
+  margin-top: -100px; 
 }
 
 /* ===== Heading ===== */
@@ -8,7 +8,7 @@
   text-align: center;
   font-size: 28px;
   font-weight: 700;
-  color: #f59e0b; 
+  color: #ef5f34; 
   margin-bottom: 15px; 
   position: relative;
 }
@@ -32,7 +32,7 @@
   justify-items: center;
   align-items: center;
   padding: 20px 20px; 
-  background-color: #f8fafc;
+  background-color:  #FEF6F3;
   text-align: center;
 }
 
