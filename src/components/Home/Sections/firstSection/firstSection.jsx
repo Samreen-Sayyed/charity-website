@@ -7,6 +7,7 @@ function FirstSection() {
   const heroRef = useRef(null);
 
   useEffect(() => {
+    // 🌟 Parallax scroll
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
@@ -16,6 +17,33 @@ function FirstSection() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // 🔥 Counter animation
+    const counters = document.querySelectorAll(".count");
+
+    counters.forEach((counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const isPercent = counter.getAttribute("data-type") === "percent";
+        const current = +counter.innerText;
+
+        const increment = target / 80;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          if (isPercent) {
+            counter.innerText = target + "%";
+          } else {
+            counter.innerText = target.toLocaleString() + "+";
+          }
+        }
+      };
+
+      updateCount();
+    });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -35,7 +63,7 @@ function FirstSection() {
           Empowering Minds,<span>Transforming Lives</span>
         </h2>
 
-        <h2 className="mission-heading">Our Mission</h2>
+        
       </div>
 
       {/* MODERN STATS */}
@@ -44,7 +72,7 @@ function FirstSection() {
         <div className="modern-card">
           <div className="modern-icon"><FaBookOpen /></div>
           <div className="modern-content">
-            <h2>25,000+</h2>
+            <h2 className="count" data-target="25000">0</h2>
             <p>Students Supported</p>
           </div>
         </div>
@@ -52,7 +80,7 @@ function FirstSection() {
         <div className="modern-card">
           <div className="modern-icon"><FaUsers /></div>
           <div className="modern-content">
-            <h2>150+</h2>
+            <h2 className="count" data-target="150">0</h2>
             <p>Schools Partnered</p>
           </div>
         </div>
@@ -60,7 +88,7 @@ function FirstSection() {
         <div className="modern-card">
           <div className="modern-icon"><FaGraduationCap /></div>
           <div className="modern-content">
-            <h2>500+</h2>
+            <h2 className="count" data-target="500">0</h2>
             <p>Scholarships Given</p>
           </div>
         </div>
@@ -68,7 +96,7 @@ function FirstSection() {
         <div className="modern-card">
           <div className="modern-icon"><FaHeart /></div>
           <div className="modern-content">
-            <h2>100%</h2>
+            <h2 className="count" data-target="100" data-type="percent">0</h2>
             <p>Committed to Education</p>
           </div>
         </div>

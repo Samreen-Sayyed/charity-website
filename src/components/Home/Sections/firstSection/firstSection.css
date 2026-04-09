@@ -1,10 +1,12 @@
 .hero-wrapper {
   position: relative;
-  height: 75vh; /* 🔥 reduced from 90vh */
+  min-height: 100vh; /* 🔥 FIXED */
+  height: auto;
   background-size: cover;
   background-position: center;
   overflow: hidden;
   margin-bottom: 100px;
+  padding-bottom: 120px; /* 🔥 space for cards */
 }
 
 /* OVERLAY */
@@ -22,12 +24,10 @@
 
 /* CONTENT */
 .hero-content {
-  position: absolute;
-  top: 35%; /* 🔥 adjusted */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative; /* 🔥 FIXED */
   z-index: 2;
   text-align: center;
+  padding-top: 120px; /* 🔥 spacing */
 }
 
 /* HEADINGS */
@@ -47,25 +47,21 @@
   color: #facc15;
 }
 
-/* 🔥 REDUCED GAP */
 .mission-heading {
   margin-top: 8px;
   color: white;
-  font-size: 26px;
+  font-size: 23px;
 }
 
 /* STATS CONTAINER */
 .stats-container {
-  position: absolute;
-  bottom: 50px; /* 🔥 moved UP */
-  left: 50%;
-  transform: translateX(-50%);
-
+  position: relative; /* 🔥 FIXED */
   display: flex;
+  flex-wrap: wrap; /* 🔥 IMPORTANT */
   gap: 25px;
-  width: 90%;
+  width: 100%;
   justify-content: center;
-
+  margin-top: 40px;
   z-index: 3;
 }
 
@@ -74,13 +70,12 @@
   display: flex;
   align-items: center;
   gap: 15px;
-
   padding: 20px 25px;
   border-radius: 20px;
 
-  width: 260px;
+  width: 100%;          /* 🔥 FIXED */
+  max-width: 260px;     /* 🔥 keeps same design */
 
-  
   color: white;
 
   position: relative;
@@ -93,19 +88,19 @@
 /* 🎨 MEDIUM BALANCED GRADIENT COLORS */
 
 .modern-card:nth-child(1) {
-  background: linear-gradient(135deg, #f59e0b, #fbbf24); /* orange-yellow */
+  background: linear-gradient(135deg, #ffa30f, #86590c);
 }
 
 .modern-card:nth-child(2) {
-  background: linear-gradient(135deg, #3b82f6, #60a5fa); /* blue */
+  background: linear-gradient(135deg,#60a5fa, #263d61);
 }
 
 .modern-card:nth-child(3) {
-  background: linear-gradient(135deg, #10b981, #34d399); /* green */
+  background: linear-gradient(135deg, #24c891, #0b4d33);
 }
 
 .modern-card:nth-child(4) {
-  background: linear-gradient(135deg, #ec4899, #f472b6); /* pink */
+  background: linear-gradient(135deg, #e95ca3, #5d163a);
 }
 
 .modern-card:hover {
@@ -146,4 +141,59 @@
 .modern-content p {
   font-size: 14px;
   opacity: 0.9;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hero-wrapper {
+    padding: 60px 20px 120px;
+  }
+
+  .main-heading {
+    font-size: 32px;
+  }
+
+  .sub-heading {
+    font-size: 18px;
+  }
+
+  .mission-heading {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .modern-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .modern-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .main-heading {
+    font-size: 45px;
+  }
+
+  .stats-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modern-card {
+    max-width: 220px;
+  }
 }

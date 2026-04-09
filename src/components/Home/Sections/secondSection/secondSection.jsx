@@ -1,39 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import medicine from "../../../Images/medicine.png";
 import faucet from "../../../Images/water-tap.png";
 import vegetable from "../../../Images/vegetable.png";
 import hat from "../../../Images/hat.png";
 import "./secondSection.css";
-function secondSection() {
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+function SecondSection() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once:false,
+    });
+  }, []);
+
   return (
     <div className="home-second-section">
+
+      <h2 className="section-heading" data-aos="fade-up">
+        Our Mission
+      </h2>
+
       <div className="icon-div">
-        <div className="first-box">
+
+        <div className="box" data-aos="zoom-in" data-aos-delay="100">
           <div className="image-box-container">
-            <img src={vegetable} />
+            <img src={vegetable} alt="Healthy Food" />
           </div>
-          <a href="#">Healthy Food</a>
+          <h3>Healthy Food</h3>
         </div>
-        <div className="second-box">
+
+        <div className="box" data-aos="zoom-in" data-aos-delay="200">
           <div className="image-box-container">
-            <img src={faucet} />
+            <img src={faucet} alt="Clean Water" />
           </div>
-          <a href="#">Clean Water</a>
+          <h3>Clean Water</h3>
         </div>
-        <div className="third-box">
+
+        <div className="box" data-aos="zoom-in" data-aos-delay="300">
           <div className="image-box-container">
-            <img src={medicine} />
+            <img src={medicine} alt="Medical Care" />
           </div>
-          <a href="#">Medical Care</a>
+          <h3>Medical Care</h3>
         </div>
-        <div className="fourth-box">
+
+        <div className="box" data-aos="zoom-in" data-aos-delay="400">
           <div className="image-box-container">
-            <img src={hat} />
+            <img src={hat} alt="Child Education" />
           </div>
-          <a href="#">Child Education</a>
+          <h3>Child Education</h3>
         </div>
+
       </div>
     </div>
   );
 }
-export default secondSection;
+
+export default SecondSection;
