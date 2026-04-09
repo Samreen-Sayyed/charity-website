@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './fourthSection.css'
 
 import Education from "../../../Images/education.png"
-import Scholarship from "../../../Images/scholarship.png"
+import Scholarship from "../../../Images/Scholarship.png"
 import FourthMedicine from "../../../Images/medicine_fourth.png"
 
 import AOS from "aos";
