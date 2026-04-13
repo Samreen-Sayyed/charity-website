@@ -9,6 +9,7 @@ import Projects from './components/Projects/Projects';
 import Scholarship from './components/Scholarship/Scholarship';
 import MemberType from './components/MemberType/MemberType';
 import MemberData from './components/MemberData/MemberData';
+import Founders from './components/Founders/Founders';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-
+            <Route path="/founders" element={<Founders />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/scholarship" element={<Scholarship />} />
             <Route path="/member-type" element={<MemberType />} />
