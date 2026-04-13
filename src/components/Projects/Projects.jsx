@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Projects.css';
 import medicalCampImage from '../Images/medical-camp.jpg'
 import SchoolProject from '../Images/school-project.jpg'
-import Scholarship from '../Images/scholarship.png'
+import Scholarship from '../Images/Scholarship.png'
 
 const dummyProjects = [
   {
