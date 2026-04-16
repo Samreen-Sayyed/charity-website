@@ -1,43 +1,51 @@
 import React from "react";
-import { AiOutlineCheckCircle } from "react-icons/ai";
-import pictureaboutFourthSection from "../../../Images/fourth-section-about-picture.png";
-import "../fourthSectionAbout/fourthSectionAbout.css";
+import { motion } from "framer-motion";   // ✅ added
+import "./fourthSectionAbout.css";
 
 const fourthSectionAbout = () => {
-  return (
-    <div className="about-fourth-section">
-      <div className="about-fourth-container">
-        <div className="about-left-fourth-section">
-          <img src={pictureaboutFourthSection} alt="picture fourth section" />
-        </div>
+  const items = [
+    { title: "Vision🌱", text: "Building an educated and ethical society." },
+    { title: "Mission🎯", text: "Support education through institutions and scholarships." },
+    { title: "Goal🚀", text: "Enable every student to achieve their dream education." },
+    { title: "Values🤝", text: "Integrity, compassion, and excellence." },
+  ];
 
-        <div className="about-right-fourth-section">
-          <h4>About Us</h4>
-          <h2>We Can Save More Lifes With Your Helping Hand.</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
-          </p>
-          <ul>
-            <li>
-              <AiOutlineCheckCircle /> The standard chunk of Lorem Ipsum used
-              since.
-            </li>
-            <li>
-              <AiOutlineCheckCircle /> Randomised words which don't look even
-              slightly believable.
-            </li>
-            <li>
-              <AiOutlineCheckCircle /> Making this the first true generator on
-              the Internet.
-            </li>
-          </ul>
-          <button>More About</button>
-        </div>
+  return (
+    <section className="purpose-section">
+
+      {/* HEADING */}
+      <motion.div
+        className="purpose-heading"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false }}
+      >
+        <h2>Our Purpose</h2>
+        <div className="heading-underline"></div>
+      </motion.div>
+
+      {/* CARDS */}
+      <div className="vision-grid">
+        {items.map((item, index) => (
+          <motion.div
+            key={index}
+            className="box"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.15   // 🔥 stagger effect
+            }}
+            viewport={{ once: false }}
+          >
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+
+    </section>
   );
 };
 
