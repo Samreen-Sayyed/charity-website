@@ -1,70 +1,98 @@
 .impact-section {
-  padding: 10px 20px;
+  position: relative;
+  padding: 50px 20px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.impact-overlay {
+  display: none;
+}
+
+.impact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-header {
   text-align: center;
-  background: #ffffff;
+  margin-bottom: 60px;
 }
 
-/* TITLE */
-.impact-section h2 {
+.impact-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 0 0 15px 0;
   color: #ef5f34;
-  font-size: 2rem;
-  margin: 0;
 }
 
-/* UNDERLINE */
-.underline {
-  width: 70px;
+.impact-underline {
+  width: 60px;
   height: 4px;
-  background: #09112e;
-  margin: 6px auto 25px;
+  background: #000;
+  margin: 0 auto 20px auto;
   border-radius: 2px;
 }
 
-/* GRID */
+.impact-header p {
+  font-size: 18px;
+  color: #666;
+  font-weight: 400;
+  margin: 0;
+}
+
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 900px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
 }
 
-/* CARD */
 .stat-card {
-  background: #f8fafc;
-  padding: 25px 15px;
-  border-radius: 12px;
-  transition: 0.3s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* NUMBER */
-.stat-card h3 {
-  font-size: 1.8rem;
-  color: #ef5f34;
-  margin-bottom: 5px;
-}
-
-/* LABEL */
-.stat-card p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* HOVER */
 .stat-card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(239, 95, 52, 0.1);
+  border-color: rgba(239, 95, 52, 0.2);
+  transform: translateY(-8px);
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+.stat-icon {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.stat-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .impact-header h2 {
+    font-size: 32px;
   }
-}
 
-@media (max-width: 500px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .stat-number {
+    font-size: 32px;
   }
 }

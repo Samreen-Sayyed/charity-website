@@ -55,35 +55,59 @@ const MemberData = () => {
     instagram: ""
   });
 
+  const [status, setStatus] = useState(""); // "", "sending", "success", "error"
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleAddMember = (e) => {
+  const handleAddMember = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
 
-    const newMember = {
-      ...formData,
-      image: formData.image || `https://i.pravatar.cc/150?u=${formData.email}`
-    };
+    setStatus("sending");
 
-    setMembers([newMember, ...members]);
-    setFormData({
-      name: "",
-      email: "",
-      type: "Normal",
-      status: "Active",
-      image: "",
-      desc: "",
-      hobbies: "",
-      facebook: "",
-      linkedin: "",
-      github: "",
-      youtube: "",
-      instagram: ""
-    });
+    try {
+      // 1. SEND TO FORMSPREE
+      const formSubmission = new FormData();
+      Object.keys(formData).forEach(key => {
+        formSubmission.append(key, formData[key]);
+      });
+
+      const response = await fetch("https://formspree.io/f/mlgabreo", {
+        method: "POST",
+        body: formSubmission,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        
+        // 2. ADD TO LOCAL LIST (Dashboard feedback)
+        const newMember = {
+          ...formData,
+          image: formData.image || `https://i.pravatar.cc/150?u=${formData.email}`
+        };
+        setMembers([newMember, ...members]);
+
+        // 3. RESET FORM
+        setFormData({
+          name: "", email: "", type: "Normal", status: "Active", image: "",
+          desc: "", hobbies: "", facebook: "", linkedin: "", github: "", 
+          youtube: "", instagram: ""
+        });
+
+        setTimeout(() => setStatus(""), 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+    }
   };
 
   const filteredMembers = members.filter((m) => {
@@ -100,7 +124,7 @@ const MemberData = () => {
       <h2>Member Dashboard</h2>
 
       {/* REGISTRATION FORM */}
-      <motion.div 
+      <motion.div
         className="registration-section"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -110,7 +134,7 @@ const MemberData = () => {
             <h3>Member Registration</h3>
             <p>Enter the details below to register a new member</p>
           </div>
-          
+
           <form onSubmit={handleAddMember} className="member-form">
             {/* PERSONAL INFORMATION */}
             <div className="form-section">
@@ -218,8 +242,16 @@ const MemberData = () => {
               </div>
             </div>
 
+            <div className="status-container">
+              {status === "sending" && <p className="status-msg sending">Sending registration...</p>}
+              {status === "success" && <p className="status-msg success">Registration sent successfully!</p>}
+              {status === "error" && <p className="status-msg error">Error sending registration. Please try again.</p>}
+            </div>
+
             <div className="form-actions">
-              <button type="submit" className="add-btn">Register as Member</button>
+              <button type="submit" className="add-btn" disabled={status === "sending"}>
+                {status === "sending" ? "Registering..." : "Register as Member"}
+              </button>
               <button type="button" className="connect-btn">Connect with Members</button>
             </div>
           </form>
@@ -237,9 +269,9 @@ const MemberData = () => {
         />
 
         <div className="filters">
-          <button onClick={() => setFilter("All")} className={filter==="All" ? "active" : ""}>All</button>
-          <button onClick={() => setFilter("Normal")} className={filter==="Normal" ? "active" : ""}>Normal</button>
-          <button onClick={() => setFilter("Elite")} className={filter==="Elite" ? "active" : ""}>Elite</button>
+          <button onClick={() => setFilter("All")} className={filter === "All" ? "active" : ""}>All</button>
+          <button onClick={() => setFilter("Normal")} className={filter === "Normal" ? "active" : ""}>Normal</button>
+          <button onClick={() => setFilter("Elite")} className={filter === "Elite" ? "active" : ""}>Elite</button>
         </div>
       </div>
 

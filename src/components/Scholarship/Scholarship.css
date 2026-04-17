@@ -1,22 +1,138 @@
-.scholarship-container {
+.scholarship-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 15px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: #ef5f34;
+}
+
+/* UNDERLINE */
+.underline {
+  width: 60px;
+  height: 3px;
+  background: #ef5f34;
+  margin: 6px auto;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #ef5f34;
+}
+
+/* IMAGE */
+.card img {
   width: 100%;
-  min-height: 100vh;
-  padding: 40px 20px;
+  height: 120px; /* FIXED HEIGHT */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
-.scholarship-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.scholarship-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #232F4B;
-}
-
-.scholarship-content p {
+/* TEXT */
+.card h3 {
   font-size: 1rem;
-  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.card p {
+  font-size: 0.85rem;
   color: #555;
+}
+
+/* CAPSULES */
+.capsules {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.cap {
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.cap.green {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.cap.orange {
+  background: #fff7ed;
+  color: #ef5f34;
+}
+
+/* STEPS */
+.steps {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.step-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.step span {
+  background: #ef5f34;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 28px;
+  font-size: 0.8rem;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+}
+
+.cta button {
+  margin-top: 8px;
+  padding: 8px 18px;
+  border-radius: 18px;
+  border: none;
+  background: #ef5f34;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .step-row {
+    flex-direction: column;
+  }
 }
