@@ -1,18 +1,22 @@
 /* ================== BASE ================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
 .founder-legacy {
-  padding: 20px;
-  text-align: center;
+  padding: 20px 20px;
 }
 
 /* HEADER */
 .legacy-header {
   max-width: 700px;
-  margin: 0 auto 40px;
+  margin: auto;
+  text-align: center;
 }
 
 .legacy-header h1 {
-  font-size: 40px;
+  font-size: 36px;
   color: #EF5F34;
 }
 
@@ -20,72 +24,125 @@
   font-size: 20px;
 }
 
+/* 🔥 UNDERLINE ADDED */
+.legacy-header h1,
+.team-header h1 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.legacy-header h1::after,
+.team-header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+
+  width: 90px;
+  height: 3px;
+  background-color: #120e36;
+  border-radius: 2px;
+}
+
 /* IMAGE */
+.legacy-image {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
 .legacy-image img {
   width: 100%;
   max-width: 900px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
-/* ================== TABLE ================== */
+/* TITLE */
+.table-title {
+  text-align: center;
+  color: #EF5F34;
+  margin: 30px 0;
+}
 
-/* WRAPPER */
-.meeting-table-wrapper {
-  max-width: 1100px;
-  margin: 50px auto;
+/* ================== MAIN LAYOUT ================== */
 
+.meeting-container {
   display: flex;
   gap: 30px;
-
-  align-items: stretch; /* 🔥 IMPORTANT FIX */
+  align-items: stretch;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* LEFT TABLE */
-.table-left {
+.table-box {
   flex: 2;
+  overflow-x: auto;
 }
 
-.table-left h3 {
-  color: #EF5F34;
-  margin-bottom: 15px;
-}
-
-.table-left table {
+.table-box table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 400px;
 }
 
-.table-left th {
+.table-box th {
   background: #EF5F34;
-  color: #fff;
+  color: white;
   padding: 10px;
 }
 
-.table-left td {
-  padding: 8px;
+.table-box td {
+  padding: 10px;
   border-bottom: 1px solid #eee;
 }
 
-.table-left tr:hover {
-  background: #f9f9f9;
-}
+/* ================== RIGHT DOCUMENT ================== */
 
-/* RIGHT IMAGE */
-.table-right {
+.doc-box {
   flex: 1;
   display: flex;
+  flex-direction: column;
+  max-width: 100%;
 }
 
-/* 🔥 IMAGE FULL HEIGHT FIX */
-.table-right img {
-  width: 100%;
-  height: 100%;           /* 🔥 MATCH TABLE HEIGHT */
-  object-fit: contain;    /* 🔥 BEST FOR DOCUMENT */
-  border-radius: 10px;
+.doc-box h3 {
+  color: #EF5F34;
+  margin-bottom: 10px;
+}
 
-  box-shadow: 
-    0 10px 25px rgba(0,0,0,0.2),
-    0 20px 40px rgba(0,0,0,0.15);
+.doc-box img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ================== MODAL ================== */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 10px;
 }
 
 /* ================== CURRENT TEAM ================== */
@@ -93,31 +150,78 @@
 .current-team {
   padding: 50px 20px;
   text-align: center;
+  color:#EF5F34
 }
 
 .team-image img {
   width: 100%;
   max-width: 900px;
-  border-radius: 15px;
+  border-radius: 10px;
+}
+
+/* ================== CURRENT TEAM TEXT FIX ================== */
+
+.team-header h1 {
+  color: #EF5F34;
+}
+
+.team-header h2 {
+  color: #000;
+}
+
+.team-header p {
+  color: #000;
+}
+
+/* FIX TEXT WIDTH + ALIGNMENT */
+.team-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
 }
 
 /* ================== RESPONSIVE ================== */
 
+/* TABLET */
+@media (max-width: 992px) {
+  .meeting-container {
+    gap: 20px;
+  }
+
+  .doc-box img {
+    max-height: 500px;
+  }
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
-  .meeting-table-wrapper {
+  .meeting-container {
     flex-direction: column;
   }
 
-  .table-right img {
-    height: auto; /* 🔥 reset for mobile */
+  .doc-box {
+    order: -1;
+  }
+
+  .doc-box img {
+    max-height: 400px;
   }
 
   .legacy-header h1 {
     font-size: 28px;
   }
+}
 
-  .meeting-table table {
-    font-size: 12px;
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+  .doc-box img {
+    max-height: 300px;
+  }
+
+  .table-title {
+    font-size: 16px;
   }
 }

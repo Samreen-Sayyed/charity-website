@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Founders.css";
 import founderImg from "../Images/Founders.png";
 import currentTeam from "../Images/current_group.png";
@@ -9,10 +9,12 @@ import "aos/dist/aos.css";
 
 const Founders = () => {
 
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false
+      once: true
     });
   }, []);
 
@@ -43,71 +45,103 @@ const Founders = () => {
 
   return (
     <>
-      {/* LEGACY SECTION */}
+      {/* ================= LEGACY ================= */}
       <section className="founder-legacy">
 
+        {/* HEADER */}
         <div className="legacy-header" data-aos="fade-up">
           <h1>Our Legacy</h1>
           <h2>Established in 1943</h2>
           <p>
-            Our foundation was laid by visionary leaders dedicated to education,
-            empowerment, and community development.
+            Established in 1943, our society was founded with a vision to promote
+            education and uplift the community. What started as a small initiative
+            has grown into a trusted institution dedicated to learning and progress.
+
+            Over the years, we have remained committed to empowering students,
+            supporting meaningful initiatives, and continuing a legacy built on
+            dedication, unity, and purpose.
           </p>
         </div>
 
+        {/* IMAGE */}
         <div className="legacy-image" data-aos="zoom-in">
           <img src={founderImg} alt="Founders 1943" />
-          <div className="image-overlay"></div>
-          <div className="year-badge">Since 1943</div>
         </div>
 
-       <div className="meeting-table-wrapper" data-aos="fade-up">
+        {/* TITLE */}
+        <h3 className="table-title" data-aos="fade-up">
+          First Meeting Members (5th December 1943)
+        </h3>
 
-  {/* LEFT SIDE - TABLE */}
-  <div className="table-left">
-    <h3>First Meeting Members (5th December 1943)</h3>
+        {/* TABLE */}
+        <div className="meeting-container" data-aos="fade-up">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Sr No</th>
-          <th>Name of Member</th>
-        </tr>
-      </thead>
+          <div className="table-box">
+            <table className="main-table">
 
-      <tbody>
-        {names.map((name, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{name}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
+              <thead>
+                <tr>
+                  <th className="col-sr">Sr No</th>
+                  <th className="col-name">Name of Member</th>
+                  <th className="col-doc">Document</th>
+                </tr>
+              </thead>
 
-  {/* RIGHT SIDE - IMAGE */}
-  <div className="table-right">
-    <img src={firstmeet} alt="First Meeting Document" />
-  </div>
+              <tbody>
+                {names.map((name, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{name}</td>
 
-</div>
+                    {index === 0 && (
+                      <td rowSpan={names.length} className="doc-cell">
+                        <img
+                          src={firstmeet}
+                          alt="Document"
+                          onClick={() => setIsOpen(true)}
+                        />
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
 
       </section>
 
-      {/* CURRENT TEAM */}
+      {/* MODAL */}
+      {isOpen && (
+        <div className="modal" onClick={() => setIsOpen(false)}>
+          <img
+            src={firstmeet}
+            alt="Full"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {/* ================= CURRENT TEAM ================= */}
       <section className="current-team">
 
         <div className="team-header" data-aos="fade-up">
           <h1>Our Present Society Member</h1>
           <h2>Carrying Forward the Legacy</h2>
+
           <p>
-            Our current members continue the vision of our founders.
+            Our present members proudly carry forward the vision of our founders,
+            working with dedication to promote education and community development.
+
+            By combining experience with modern ideas, they ensure the organization
+            continues to grow while staying true to its values and mission.
           </p>
         </div>
 
         <div className="team-image" data-aos="zoom-in">
-          <img src={currentTeam} alt="Current Team" />
+          <img src={currentTeam} alt="Team" />
         </div>
 
       </section>
