@@ -55,35 +55,54 @@ const MemberData = () => {
     instagram: ""
   });
 
+  const [status, setStatus] = useState(""); // "", "sending", "success", "error"
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleAddMember = (e) => {
+  const handleAddMember = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
 
-    const newMember = {
-      ...formData,
-      image: formData.image || `https://i.pravatar.cc/150?u=${formData.email}`
-    };
+    setStatus("sending");
 
-    setMembers([newMember, ...members]);
-    setFormData({
-      name: "",
-      email: "",
-      type: "Normal",
-      status: "Active",
-      image: "",
-      desc: "",
-      hobbies: "",
-      facebook: "",
-      linkedin: "",
-      github: "",
-      youtube: "",
-      instagram: ""
-    });
+    try {
+      // 1. SEND TO FORMSPREE
+      // Replace 'YOUR_FORM_ID' with your actual Formspree ID
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        
+        // 2. ADD TO LOCAL LIST (Dashboard feedback)
+        const newMember = {
+          ...formData,
+          image: formData.image || `https://i.pravatar.cc/150?u=${formData.email}`
+        };
+        setMembers([newMember, ...members]);
+
+        // 3. RESET FORM
+        setFormData({
+          name: "", email: "", type: "Normal", status: "Active", image: "",
+          desc: "", hobbies: "", facebook: "", linkedin: "", github: "", 
+          youtube: "", instagram: ""
+        });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => setStatus(""), 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+    }
   };
 
   const filteredMembers = members.filter((m) => {
@@ -218,8 +237,16 @@ const MemberData = () => {
               </div>
             </div>
 
+            <div className="status-container">
+              {status === "sending" && <p className="status-msg sending">Sending registration...</p>}
+              {status === "success" && <p className="status-msg success">Registration sent successfully!</p>}
+              {status === "error" && <p className="status-msg error">Error sending registration. Please try again.</p>}
+            </div>
+
             <div className="form-actions">
-              <button type="submit" className="add-btn">Register as Member</button>
+              <button type="submit" className="add-btn" disabled={status === "sending"}>
+                {status === "sending" ? "Registering..." : "Register as Member"}
+              </button>
               <button type="button" className="connect-btn">Connect with Members</button>
             </div>
           </form>
