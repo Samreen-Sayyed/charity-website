@@ -71,7 +71,7 @@ const MemberData = () => {
     try {
       // 1. SEND TO FORMSPREE
       // Replace 'YOUR_FORM_ID' with your actual Formspree ID
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/mlgabreo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
