@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './SixthSection.css'
+import './sixthSection.css'
 
 // AOS
 import AOS from 'aos'
@@ -39,9 +39,9 @@ const SixthSection = () => {
 
                         {/* CARD 1 */}
                         <div className='card' data-aos="zoom-in">
-                            <img 
-                                src={EigthPic1} 
-                                alt="students receiving school supplies" 
+                            <img
+                                src={EigthPic1}
+                                alt="students receiving school supplies"
                             />
                             <h4>10 Jan, 2026</h4>
                             <h2>School Kit Distribution Drive</h2>
@@ -52,9 +52,9 @@ const SixthSection = () => {
 
                         {/* CARD 2 */}
                         <div className='card' data-aos="zoom-in" data-aos-delay="200">
-                            <img 
-                                src={EigthPic2} 
-                                alt="free medical camp checkup" 
+                            <img
+                                src={EigthPic2}
+                                alt="free medical camp checkup"
                             />
                             <h4>25 Feb, 2026</h4>
                             <h2>Free Dental & Eye Camp</h2>
@@ -65,9 +65,9 @@ const SixthSection = () => {
 
                         {/* CARD 3 */}
                         <div className='card' data-aos="zoom-in" data-aos-delay="400">
-                            <img 
-                                src={EigthPic3} 
-                                alt="students receiving scholarships" 
+                            <img
+                                src={EigthPic3}
+                                alt="students receiving scholarships"
                             />
                             <h4>15 Mar, 2026</h4>
                             <h2>Scholarship Award Program</h2>

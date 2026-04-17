@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './SeventhSection.css'
+import './seventhSection.css'
 
 // AOS
 import AOS from 'aos'
@@ -21,7 +21,7 @@ function SeventhSection() {
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: false 
+            once: false
         })
     }, [])
 

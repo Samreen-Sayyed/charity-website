@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./FifthSection.css";
+import "./fifthSection.css";
 
 // AOS
 import AOS from "aos";
@@ -30,9 +30,9 @@ function FifthSection() {
           </div>
 
           {/* BUTTON */}
-          <div 
-            className="seventh-second-item" 
-            data-aos="fade-left" 
+          <div
+            className="seventh-second-item"
+            data-aos="fade-left"
             data-aos-delay="200"
           >
             <button>Become A Volunteer</button>
@@ -41,9 +41,9 @@ function FifthSection() {
         </div>
 
         {/* IMAGE */}
-        <div 
-          className="seventh-third-item" 
-          data-aos="zoom-in" 
+        <div
+          className="seventh-third-item"
+          data-aos="zoom-in"
           data-aos-delay="300"
         >
           <img

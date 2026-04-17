@@ -1,5 +1,5 @@
 .impact-section {
-  padding: 10px 20px;
+  padding: 10px 50px;
   text-align: center;
   background: #ffffff;
 }
@@ -12,11 +12,11 @@
 }
 
 /* UNDERLINE */
-.underline {
-  width: 70px;
+.heading-underline {
+  width: 72px;
   height: 4px;
   background: #09112e;
-  margin: 6px auto 25px;
+  margin: 12px auto 0;
   border-radius: 2px;
 }
 
@@ -36,6 +36,7 @@
   border-radius: 12px;
   transition: 0.3s ease;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ef5f34
 }
 
 /* NUMBER */
