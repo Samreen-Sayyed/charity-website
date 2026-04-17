@@ -11,10 +11,31 @@ const Founders = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  // 3D Tilt Effect Handlers
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const box = card.getBoundingClientRect();
+    const x = e.clientX - box.left;
+    const y = e.clientY - box.top;
+    const centerX = box.width / 2;
+    const centerY = box.height / 2;
+
+    // Calculate rotation (-10 to 10 degrees)
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  };
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true
+      once: false
     });
   }, []);
 
@@ -46,10 +67,13 @@ const Founders = () => {
   return (
     <>
       {/* ================= LEGACY ================= */}
-      <section className="founder-legacy">
+      <section className="founder-legacy relative-section">
+        {/* Decorative Background Blobs */}
+        <div className="shape-blob shape-blob-1"></div>
+        <div className="shape-blob shape-blob-2"></div>
 
         {/* HEADER */}
-        <div className="legacy-header" data-aos="fade-up">
+        <div className="legacy-header" data-aos="fade-up" data-aos-duration="1200">
           <h1>Our Legacy</h1>
           <h2>Established in 1943</h2>
           <p>
@@ -64,12 +88,19 @@ const Founders = () => {
         </div>
 
         {/* IMAGE */}
-        <div className="legacy-image" data-aos="zoom-in">
-          <img src={founderImg} alt="Founders 1943" />
+        <div className="legacy-image" data-aos="zoom-in" data-aos-duration="1500">
+          <div
+            className="tilt-wrapper"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="glowing-backdrop"></div>
+            <img src={founderImg} alt="Founders 1943" className="animated-image" />
+          </div>
         </div>
 
         {/* TITLE */}
-        <h3 className="table-title" data-aos="fade-up">
+        <h3 className="table-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           First Meeting Members (5th December 1943)
         </h3>
 
@@ -89,7 +120,12 @@ const Founders = () => {
 
               <tbody>
                 {names.map((name, index) => (
-                  <tr key={index}>
+                  <tr
+                    key={index}
+                    data-aos="fade-up"
+                    data-aos-delay={(index % 10) * 50}
+                    className="animated-row"
+                  >
                     <td>{index + 1}</td>
                     <td>{name}</td>
 
@@ -99,6 +135,9 @@ const Founders = () => {
                           src={firstmeet}
                           alt="Document"
                           onClick={() => setIsOpen(true)}
+                          className="pulsing-doc"
+                          data-aos="zoom-in"
+                          data-aos-delay="500"
                         />
                       </td>
                     )}
@@ -125,9 +164,10 @@ const Founders = () => {
       )}
 
       {/* ================= CURRENT TEAM ================= */}
-      <section className="current-team">
+      <section className="current-team relative-section">
+        <div className="shape-blob shape-blob-3"></div>
 
-        <div className="team-header" data-aos="fade-up">
+        <div className="team-header" data-aos="fade-up" data-aos-duration="1200">
           <h1>Our Present Society Member</h1>
           <h2>Carrying Forward the Legacy</h2>
 
@@ -140,8 +180,15 @@ const Founders = () => {
           </p>
         </div>
 
-        <div className="team-image" data-aos="zoom-in">
-          <img src={currentTeam} alt="Team" />
+        <div className="team-image" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
+          <div
+            className="tilt-wrapper"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div className="glowing-backdrop"></div>
+            <img src={currentTeam} alt="Team" className="animated-image" />
+          </div>
         </div>
 
       </section>
