@@ -1,27 +1,51 @@
 import React from "react";
-import "../secondSectionAbout/secondSectionAbout.css";
-import SeconSectionPic from "../../../Images/second-section-about-picture.jpg";
-import Modal from "../secondSectionAbout/popupSecondSection.jsx";
+import { motion } from "framer-motion";
+import "./secondSectionAbout.css";
 
-function secondSectionAbout() {
+const SecondSectionAbout = () => {
   return (
-    <div className="about-second-section">
-      <div className="second-section-container">
-        <div className="image-container-second-about-section">
-          <img src={SeconSectionPic} alt="second-section-picture" />
-          <div className="ghana-video">
-            <Modal />
-          </div>
-        </div>
+    <section className="about-story">
 
-        <h2>
-          See what we do for the <span>poor people and the children</span>
-        </h2>
+      {/* TITLE */}
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false }}
+      >
+        Our Story
+      </motion.h2>
 
-        <hr />
-      </div>
-    </div>
+      {/* UNDERLINE */}
+      <motion.div
+        className="underline"
+        initial={{ width: 0 }}
+        whileInView={{ width: "80px" }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: false }}
+      ></motion.div>
+
+      {/* CARD */}
+      <motion.div
+        className="story-card"
+        initial={{ opacity: 0, y: 60, scale: 0.9 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+        duration: 0.7,
+        ease: "easeOut"
+      }}
+      viewport={{ once: false }}
+      >
+        <p>
+          Mumbai, often called the city of dreams, attracts millions striving for a better future. 
+          In 1943, a group of young professionals from Malegaon came together to support students 
+          facing hardships in education and employment. Since then, the Malegaon Society of Education 
+          has empowered thousands through scholarships, schools, and community initiatives.
+        </p>
+      </motion.div>
+
+    </section>
   );
-}
+};
 
-export default secondSectionAbout;
+export default SecondSectionAbout;

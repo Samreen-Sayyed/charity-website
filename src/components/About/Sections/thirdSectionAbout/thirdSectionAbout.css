@@ -1,304 +1,117 @@
-.about-third-section {
-  grid-row: 3/3;
-}
-@media screen and (min-device-width: 1440px) {
-  .icon-about-div {
-    display: grid;
-    grid-auto-columns: repeat(4, 1fr);
-    justify-items: center;
-    align-items: center;
-    padding: 90px 0 60px;
-    background-color: #fff;
-    top: -75px;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 80px;
-  }
-  .icon-about-div a {
-    text-decoration: none;
-    color: #212158;
-    font-size: 26px;
-    font-weight: 600;
-  }
-  .icon-about-div a:hover {
-    color: #ef5f34;
-  }
-  .icon-about-div img {
-    width: 80px;
-    height: 80px;
-    line-height: 175px;
-    text-align: center;
-    border-radius: 50%;
-    position: relative;
-    top: -65px;
-    padding: 30px 30px;
-    background-color: #fff;
-    margin: 15px 15px;
-  }
-  .about-first-box {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    background: #caf7f2;
-    border-radius: 15px;
-    box-shadow: none;
-    padding: 15px 61px 35px 75px;
-  }
-  .about-second-box {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    background: #fde4dd;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    top: 65px;
-    padding: 15px 75px 35px 75px;
-  }
-  .about-third-box {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    background: #d2ecf4;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 15px 65px 35px 75px;
-  }
-  .about-fourth-box {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    background: #fdf3e0;
-    border-radius: 15px;
-    box-shadow: none;
-    top: 65px;
-    position: relative;
-    padding: 15px 45px 35px 64px;
-  }
-  .about-image-box-container {
-    margin: -45px;
-  }
+.thirdSectionAbout {
+  width: 100%;
+  padding: 80px 20px;
+ background: #ffffff;
 }
 
-@media screen and (min-device-width: 1024px) and (max-device-width: 1439px) {
-  .icon-about-div {
-    display: grid;
-    grid-auto-columns: repeat(4, 1fr);
-    justify-items: center;
-    align-items: center;
-    padding: 90px 0 60px;
-    background-color: #fff;
-    top: -75px;
-    text-align: center;
-    margin: 80px 60px;
-    grid-gap: 15px;
-  }
-  .icon-about-div a {
-    text-decoration: none;
-    color: #212158;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .icon-about-div a:hover {
-    color: #ef5f34;
-  }
-  .icon-about-div img {
-    width: 60px;
-    height: 60px;
-    line-height: 175px;
-    text-align: center;
-    border-radius: 50%;
-    position: relative;
-    top: -40px;
-    padding: 35px 35px;
-    background-color: #fff;
-    margin: 15px 15px;
-  }
-  .about-first-box {
-    grid-column-start: 1;
-    grid-column-end: 1;
-    background: #caf7f2;
-    border-radius: 15px;
-    box-shadow: none;
-    padding: 25px 50px 37px 50px;
-  }
-  .about-second-box {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    background: #fde4dd;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    top: 65px;
-    padding: 25px 55px 55px 50px;
-  }
-  .about-third-box {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    background: #d2ecf4;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 25px 50px 60px 50px;
-  }
-  .about-fourth-box {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    background: #fdf3e0;
-    border-radius: 15px;
-    box-shadow: none;
-    top: 65px;
-    position: relative;
-    padding: 25px 35px 30px 40px;
-  }
-  .about-image-box-container {
-    margin: -45px;
-  }
+.timeline-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-  .icon-about-div {
-    display: grid;
-    grid-auto-rows: repeat(2, 1fr);
-    grid-auto-columns: repeat(4, 1fr);
-    grid-gap: 50px;
-    justify-items: center;
-    align-items: center;
-    padding: 90px 0 60px;
-    background-color: #fff;
-    top: -75px;
-    text-align: center;
-    margin: 80px 60px;
-  }
-  .icon-about-div a {
-    text-decoration: none;
-    color: #212158;
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .icon-about-div a:hover {
-    color: #ef5f34;
-  }
-  .icon-about-div img {
-    width: 50px;
-    height: 50px;
-    line-height: 175px;
-    text-align: center;
-    border-radius: 50%;
-    position: relative;
-    top: -65px;
-    padding: 30px 30px;
-    background-color: #fff;
-    margin: 15px 15px;
-  }
-  .about-first-box {
-    grid-row: 1/1;
-    background: #caf7f2;
-    border-radius: 15px;
-    box-shadow: none;
-    padding: 25px 55px 55px 50px;
-  }
-  .about-second-box {
-    grid-column: 2/2;
-    background: #fde4dd;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 25px 65px 55px 50px;
-  }
-  .about-third-box {
-    grid-row: 2/2;
-    background: #d2ecf4;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 25px 60px 55px 50px;
-    top: 40px;
-  }
-  .about-fourth-box {
-    grid-column: 2/2;
-    background: #fdf3e0;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 25px 35px 55px 50px;
-    top: 40px;
-  }
-  .about-image-box-container {
-    margin: -45px;
-  }
+.timeline-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 767px) {
-  .icon-about-div {
-    display: grid;
-    grid-auto-rows: repeat(4, 1fr);
-    grid-gap: 50px;
-    justify-items: center;
-    align-items: center;
-    padding: 90px 0 60px;
-    background-color: #fff;
-    top: -75px;
-    text-align: center;
-    margin: 80px 0px;
-  }
-  .icon-about-div a {
-    text-decoration: none;
-    color: #212158;
-    font-size: 19px;
-    font-weight: 600;
-  }
-  .icon-about-div a:hover {
-    color: #ef5f34;
-  }
-  .icon-about-div img {
-    width: 50px;
-    height: 50px;
-    line-height: 175px;
-    text-align: center;
-    border-radius: 50%;
-    position: relative;
-    top: -45px;
-    padding: 35px 35px;
-    background-color: #fff;
-    margin: 15px 15px;
-  }
-  .about-first-box {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    background: #caf7f2;
-    border-radius: 15px;
-    box-shadow: none;
-    padding: 15px 75px 35px 70px;
-  }
-  .about-second-box {
-    grid-row-start: 2;
-    grid-row-end: 2;
-    background: #fde4dd;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 15px 86px 35px 70px;
-    top: 25px;
-  }
-  .about-third-box {
-    grid-row-start: 3;
-    grid-row-end: 3;
-    background: #d2ecf4;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 15px 79px 35px 70px;
-    top: 40px;
-  }
-  .about-fourth-box {
-    grid-row-start: 4;
-    grid-row-end: 4;
-    background: #fdf3e0;
-    border-radius: 15px;
-    box-shadow: none;
-    position: relative;
-    padding: 15px 56px 35px 70px;
-    top: 60px;
-  }
-  .about-image-box-container {
-    margin: -45px;
-  }
+.timeline-subtitle {
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* LINE */
+.timeline-wrapper {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 0;
+  background: #4caf50;
+  transform: translateX(-50%);
+  transition: 1.5s;
+}
+
+.timeline-line.active {
+  height: 100%;
+}
+
+/* ITEM */
+.milestone-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.8s ease;
+}
+
+/* SHOW */
+.milestone-item.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ACTIVE */
+.milestone-item.active .milestone-content {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(76, 175, 80, 0.3);
+}
+
+/* FADED */
+.milestone-item.faded {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+/* LEFT RIGHT */
+.milestone-item:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.milestone-item:nth-child(even) {
+  justify-content: flex-end;
+}
+
+/* DOT */
+.milestone-dot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid #4caf50;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+/* CARD */
+.milestone-content {
+  width: 45%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.4s;
+}
+
+.milestone-year {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.milestone-icon {
+  font-size: 30px;
+}
+
+.milestone-title {
+  font-size: 20px;
+}
+
+.milestone-description {
+  color: #666;
 }

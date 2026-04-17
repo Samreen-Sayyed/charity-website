@@ -1,22 +1,163 @@
-.member-data-container {
+/* PAGE */
+.member-data {
+  padding: 10px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* TITLE */
+.member-data h2 {
+  text-align: center;
+  color: #ef5f34;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+/* SEARCH */
+.search-bar {
   width: 100%;
-  min-height: 100vh;
-  padding: 40px 20px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
 }
 
-.member-data-content {
-  max-width: 1200px;
-  margin: 0 auto;
+/* FILTER */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
-.member-data-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #232F4B;
+.filters button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.member-data-content p {
-  font-size: 1rem;
-  line-height: 1.6;
+.filters button.active {
+  background: #ef5f34;
+  color: white;
+}
+
+/* GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* CARD */
+.member-card {
+  background: white;
+  padding: 22px;
+  border-radius: 16px;
+  text-align: center;
+
+  /* 🔥 CLEAN BORDER */
+  border: 1px solid #e5e7eb;
+
+  /* SOFT SHADOW */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER */
+.member-card:hover {
+  transform: translateY(-5px);
+
+  /* Slightly stronger shadow */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+
+  /* Highlight border */
+  border-color: #ef5f34;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+
+  border: 3px solid #ef5f34;
+}
+
+/* NAME */
+.member-card h3 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 0.85rem;
   color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* EMAIL */
+.email {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* BADGES */
+.badges {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TYPE */
+.type {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.type.normal {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.type.elite {
+  background: #fff7ed;
+  color: #ef5f34;
+}
+
+/* STATUS */
+.status {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status.active {
+  color: #16a34a;
+}
+
+.status.inactive {
+  color: #dc2626;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
