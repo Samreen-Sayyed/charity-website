@@ -1,91 +1,150 @@
-import React, { useEffect } from 'react'
-import './fourthSection.css'
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaGraduationCap, FaSchool, FaBookOpen, FaLaptopCode, FaHandsHelping, FaUsers } from 'react-icons/fa';
+import './fourthSection.css';
 
 const FourthSection = () => {
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            once: false,
-        });
-    }, []);
+    const initiatives = [
+        {
+            title: "Education & Scholarships",
+            icon: <FaGraduationCap />,
+            desc: "For over 60 years, scholarships have been provided to thousands of students from Malegaon, helping them pursue higher education and preventing talent from being wasted.",
+            color: "#38bdf8" // Light Blue
+        },
+        {
+            title: "Urdu Medium School",
+            icon: <FaSchool />,
+            desc: "Established in 2013, the school offers modern classrooms, labs, and facilities. Built on 10,000 sq. ft., it is one of the most advanced educational institutions in the city.",
+            color: "#34d399" // Emerald
+        },
+        {
+            title: "Book Fairs & Literary Events",
+            icon: <FaBookOpen />,
+            desc: "Organized National Urdu Book Fairs in 2014 & 2021 and supported international literary festival “Rashk-e-Baharan” in 2024.",
+            color: "#fbbf24" // Amber
+        },
+        {
+            title: "Skill Development",
+            icon: <FaLaptopCode />,
+            desc: "Conducted English coaching classes and established one of the earliest computer centres in Malegaon.",
+            color: "#a78bfa" // Violet
+        },
+        {
+            title: "Relief Work",
+            icon: <FaHandsHelping />,
+            desc: "During lockdown, food supplies worth millions were distributed to support families in need with dignity.",
+            color: "#f472b6" // Pink
+        },
+        {
+            title: "Community Engagement",
+            icon: <FaUsers />,
+            desc: "“Shaam-e-Mulaqat” events connect Malegaon community and honor pioneers while continuing their legacy.",
+            color: "#fb923c" // Orange
+        }
+    ];
+
+    // Animation Variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15 }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 60, rotateX: -20 },
+        visible: {
+            opacity: 1, y: 0, rotateX: 0,
+            transition: { type: "spring", stiffness: 70, damping: 15 }
+        }
+    };
+
+    // 3D Tilt Effect
+    const handleMouseMove = (e) => {
+        const card = e.currentTarget;
+        const box = card.getBoundingClientRect();
+        const x = e.clientX - box.left;
+        const y = e.clientY - box.top;
+        const centerX = box.width / 2;
+        const centerY = box.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -12;
+        const rotateY = ((x - centerX) / centerX) * 12;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+    };
+
+    const handleMouseLeave = (e) => {
+        const card = e.currentTarget;
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    };
 
     return (
-        <section className='home-fourth-section'> 
+        <section className='home-fourth-section'>
+
+            {/* Deep Dynamic Background */}
+            <div className="fourth-bg-blob blob-1"></div>
+            <div className="fourth-bg-blob blob-2"></div>
+            <div className="fourth-bg-blob blob-3"></div>
+
             <div className='fourth-container'>
 
                 {/* HEADER */}
-                <div className='fourth-upper-container' data-aos="fade-up">
-                    <h4>Our Work</h4>
-                    <h2>Our Work & Initiatives</h2>
+                <motion.div
+                    className='fourth-upper-container'
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: false, margin: "-50px" }}
+                >
+                    <span className="fourth-badge">Our Work & Initiatives</span>
+
                     <p>
                         For over 60 years, Malegaon Education Society has contributed
                         to education, community development, and social welfare.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* CARDS */}
-                <div className='fourth-lower-container'>
+                <motion.div
+                    className='fourth-lower-container'
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, margin: "-50px" }}
+                >
                     <div className='fourth-lower-column-container'>
 
-                        <div className='card' data-aos="fade-up">
-                            <h3>Education & Scholarships</h3>
-                            <p>
-                                For over 60 years, scholarships have been provided to thousands
-                                of students from Malegaon, helping them pursue higher education
-                                and preventing talent from being wasted.
-                            </p>
-                        </div>
+                        {initiatives.map((item, index) => (
+                            <motion.div
+                                key={index}
+                                className='fourth-card'
+                                variants={cardVariants}
+                                onMouseMove={handleMouseMove}
+                                onMouseLeave={handleMouseLeave}
+                                style={{ '--accent-color': item.color }}
+                            >
+                                <div className="fourth-card-glow"></div>
 
-                        <div className='card' data-aos="fade-up" data-aos-delay="100">
-                            <h3>Urdu Medium School</h3>
-                            <p>
-                                Established in 2013, the school offers modern classrooms,
-                                labs, and facilities. Built on 10,000 sq. ft., it is one of
-                                the most advanced educational institutions in the city.
-                            </p>
-                        </div>
+                                <div className="fourth-card-icon-wrapper">
+                                    {item.icon}
+                                </div>
 
-                        <div className='card' data-aos="fade-up" data-aos-delay="200">
-                            <h3>Book Fairs & Literary Events</h3>
-                            <p>
-                                Organized National Urdu Book Fairs in 2014 & 2021 and
-                                supported international literary festival “Rashk-e-Baharan” in 2024.
-                            </p>
-                        </div>
+                                <h3>{item.title}</h3>
+                                <p>{item.desc}</p>
 
-                        <div className='card' data-aos="fade-up">
-                            <h3>Skill Development</h3>
-                            <p>
-                                Conducted English coaching classes and established one of the
-                                earliest computer centres in Malegaon.
-                            </p>
-                        </div>
-
-                        <div className='card' data-aos="fade-up" data-aos-delay="100">
-                            <h3>Relief Work</h3>
-                            <p>
-                                During lockdown, food supplies worth millions were distributed
-                                to support families in need with dignity.
-                            </p>
-                        </div>
-
-                        <div className='card' data-aos="fade-up" data-aos-delay="200">
-                            <h3>Community Engagement</h3>
-                            <p>
-                                “Shaam-e-Mulaqat” events connect Malegaon community and honor
-                                pioneers while continuing their legacy.
-                            </p>
-                        </div>
+                                <div className="fourth-card-bottom-line"></div>
+                            </motion.div>
+                        ))}
 
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </section>
     )
 }
 
-export default FourthSection
+export default FourthSection;

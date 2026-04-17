@@ -8,7 +8,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Founders = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   // 3D Tilt Effect Handlers
@@ -20,7 +19,6 @@ const Founders = () => {
     const centerX = box.width / 2;
     const centerY = box.height / 2;
 
-    // Calculate rotation (-10 to 10 degrees)
     const rotateX = ((y - centerY) / centerY) * -10;
     const rotateY = ((x - centerX) / centerX) * 10;
 
@@ -40,159 +38,117 @@ const Founders = () => {
   }, []);
 
   const names = [
-    "Muhammad Ismail Ansari",
-    "Muhammad Hasan B.A",
-    "Muhammad Saleem",
-    "Muhammad Saleem Siddiqui",
-    "Master Muhammad Suleman Ansari",
-    "Muhammad Usman",
-    "Chirag Ahmed",
-    "Muhammad Siddiq Farani",
-    "Muhammad Sadique",
-    "Hakeem Muhammad Ayyub",
-    "Muhammad Siddeeque",
-    "Abdul Rashid",
-    "Muhammad Yaqub",
-    "Muhammad Ishaq",
-    "Muhammad Yahya Zubair",
-    "Muhammad Hassan Noori",
-    "Shams Al-Dhaha Ansari",
-    "Muhammad Hanif Shorush",
-    "Ghulam Momin Shah",
-    "Pir Muhammad",
-    "Muhammad Sabir Momin",
-    "Abdul Aziz Azimuddeen"
+    "Muhammad Ismail Ansari", "Muhammad Hasan B.A", "Muhammad Saleem", "Muhammad Saleem Siddiqui",
+    "Master Muhammad Suleman Ansari", "Muhammad Usman", "Chirag Ahmed", "Muhammad Siddiq Farani",
+    "Muhammad Sadique", "Hakeem Muhammad Ayyub", "Muhammad Siddeeque", "Abdul Rashid",
+    "Muhammad Yaqub", "Muhammad Ishaq", "Muhammad Yahya Zubair", "Muhammad Hassan Noori",
+    "Shams Al-Dhaha Ansari", "Muhammad Hanif Shorush", "Ghulam Momin Shah", "Pir Muhammad",
+    "Muhammad Sabir Momin", "Abdul Aziz Azimuddeen"
   ];
 
   return (
-    <>
-      {/* ================= LEGACY ================= */}
-      <section className="founder-legacy relative-section">
-        {/* Decorative Background Blobs */}
-        <div className="shape-blob shape-blob-1"></div>
-        <div className="shape-blob shape-blob-2"></div>
+    <div className="founders-page-wrapper">
+      {/* Decorative Blobs */}
+      <div className="modern-blob blob-orange top-left"></div>
+      <div className="modern-blob blob-blue bottom-right"></div>
+      <div className="modern-blob blob-light right-center"></div>
 
-        {/* HEADER */}
-        <div className="legacy-header" data-aos="fade-up" data-aos-duration="1200">
-          <h1>Our Legacy</h1>
-          <h2>Established in 1943</h2>
-          <p>
-            Established in 1943, our society was founded with a vision to promote
-            education and uplift the community. What started as a small initiative
+      {/* ================= LEGACY HERO ================= */}
+      <section className="legacy-hero">
+        <div className="hero-content" data-aos="fade-right" data-aos-duration="1200">
+          <div className="section-badge">Established in 1943</div>
+          <h1 className="modern-heading">Our Legacy</h1>
+          <p className="modern-text">
+            Founded with a vision to promote education and uplift the community, what started as a small initiative
             has grown into a trusted institution dedicated to learning and progress.
-
-            Over the years, we have remained committed to empowering students,
-            supporting meaningful initiatives, and continuing a legacy built on
-            dedication, unity, and purpose.
+          </p>
+          <p className="modern-text">
+            Over the years, we have remained committed to empowering students, supporting meaningful initiatives,
+            and continuing a legacy built on dedication, unity, and purpose.
           </p>
         </div>
 
-        {/* IMAGE */}
-        <div className="legacy-image" data-aos="zoom-in" data-aos-duration="1500">
-          <div
-            className="tilt-wrapper"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
+        <div className="hero-visual" data-aos="fade-left" data-aos-duration="1500">
+          <div className="tilt-wrapper" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <div className="glowing-backdrop"></div>
-            <img src={founderImg} alt="Founders 1943" className="animated-image" />
+            <img src={founderImg} alt="Founders 1943" className="modern-hero-img" />
           </div>
         </div>
-
-        {/* TITLE */}
-        <h3 className="table-title" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-          First Meeting Members (5th December 1943)
-        </h3>
-
-        {/* TABLE */}
-        <div className="meeting-container" data-aos="fade-up">
-
-          <div className="table-box">
-            <table className="main-table">
-
-              <thead>
-                <tr>
-                  <th className="col-sr">Sr No</th>
-                  <th className="col-name">Name of Member</th>
-                  <th className="col-doc">Document</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {names.map((name, index) => (
-                  <tr
-                    key={index}
-                    data-aos="fade-up"
-                    data-aos-delay={(index % 10) * 50}
-                    className="animated-row"
-                  >
-                    <td>{index + 1}</td>
-                    <td>{name}</td>
-
-                    {index === 0 && (
-                      <td rowSpan={names.length} className="doc-cell">
-                        <img
-                          src={firstmeet}
-                          alt="Document"
-                          onClick={() => setIsOpen(true)}
-                          className="pulsing-doc"
-                          data-aos="zoom-in"
-                          data-aos-delay="500"
-                        />
-                      </td>
-                    )}
-                  </tr>
-                ))}
-              </tbody>
-
-            </table>
-          </div>
-
-        </div>
-
       </section>
 
-      {/* MODAL */}
-      {isOpen && (
-        <div className="modal" onClick={() => setIsOpen(false)}>
-          <img
-            src={firstmeet}
-            alt="Full"
-            onClick={(e) => e.stopPropagation()}
-          />
+      {/* ================= FIRST MEETING MEMBERS ================= */}
+      <section className="meeting-members-section">
+        <div className="members-header" data-aos="fade-up">
+          <h2>First Meeting Members</h2>
+          <p>5th December 1943</p>
         </div>
-      )}
+
+        <div className="members-layout">
+          {/* Members Grid (Replaces old table) */}
+          <div className="members-grid-container">
+            <div className="members-grid">
+              {names.map((name, index) => (
+                <div
+                  key={index}
+                  className="member-card"
+                  data-aos="fade-up"
+                  data-aos-delay={(index % 8) * 50}
+                >
+                  <span className="member-index">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="member-name">{name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Document */}
+          <div className="featured-doc-container" data-aos="zoom-in" data-aos-delay="200">
+            <div className="doc-presentation">
+              <h3>Original Document</h3>
+              <div className="doc-frame pulse-frame" onClick={() => setIsOpen(true)}>
+                <img src={firstmeet} alt="First Meeting Document" />
+                <div className="doc-hover-overlay">
+                  <span className="view-text">Click to View</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ================= CURRENT TEAM ================= */}
-      <section className="current-team relative-section">
-        <div className="shape-blob shape-blob-3"></div>
+      <section className="current-team-hero">
+        <div className="hero-visual" data-aos="fade-right" data-aos-duration="1500">
+          <div className="tilt-wrapper" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+            <div className="glowing-backdrop"></div>
+            <img src={currentTeam} alt="Current Team" className="modern-hero-img" />
+          </div>
+        </div>
 
-        <div className="team-header" data-aos="fade-up" data-aos-duration="1200">
-          <h1>Our Present Society Member</h1>
-          <h2>Carrying Forward the Legacy</h2>
-
-          <p>
+        <div className="hero-content" data-aos="fade-left" data-aos-duration="1200">
+          <div className="section-badge">Present Society</div>
+          <h1 className="modern-heading">Carrying Forward the Legacy</h1>
+          <p className="modern-text">
             Our present members proudly carry forward the vision of our founders,
             working with dedication to promote education and community development.
-
+          </p>
+          <p className="modern-text">
             By combining experience with modern ideas, they ensure the organization
             continues to grow while staying true to its values and mission.
           </p>
         </div>
+      </section>
 
-        <div className="team-image" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="200">
-          <div
-            className="tilt-wrapper"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="glowing-backdrop"></div>
-            <img src={currentTeam} alt="Team" className="animated-image" />
+      {/* MODAL */}
+      {isOpen && (
+        <div className="glass-modal" onClick={() => setIsOpen(false)}>
+          <div className="modal-content-wrapper" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal-btn" onClick={() => setIsOpen(false)}>✕</button>
+            <img src={firstmeet} alt="First Meeting Document Full" className="modal-image-full" />
           </div>
         </div>
-
-      </section>
-    </>
+      )}
+    </div>
   );
 };
 
