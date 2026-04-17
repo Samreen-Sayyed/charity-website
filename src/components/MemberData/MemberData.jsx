@@ -46,7 +46,13 @@ const MemberData = () => {
     type: "Normal",
     status: "Active",
     image: "",
-    desc: ""
+    desc: "",
+    hobbies: "",
+    facebook: "",
+    linkedin: "",
+    github: "",
+    youtube: "",
+    instagram: ""
   });
 
   const handleInputChange = (e) => {
@@ -70,7 +76,13 @@ const MemberData = () => {
       type: "Normal",
       status: "Active",
       image: "",
-      desc: ""
+      desc: "",
+      hobbies: "",
+      facebook: "",
+      linkedin: "",
+      github: "",
+      youtube: "",
+      instagram: ""
     });
   };
 
@@ -175,7 +187,41 @@ const MemberData = () => {
               </div>
             </div>
 
-            <button type="submit" className="add-btn">Register as Member</button>
+            {/* SOCIAL MEDIA & INTERESTS */}
+            <div className="form-section">
+              <h4>Social Media & Interests</h4>
+              <div className="form-grid">
+                <div className="field full-width">
+                  <label>Hobbies</label>
+                  <textarea name="hobbies" placeholder="Tell us about your hobbies and interests" value={formData.hobbies || ""} onChange={handleInputChange} rows="2"></textarea>
+                </div>
+                <div className="field">
+                  <label>Facebook Profile</label>
+                  <input type="url" name="facebook" placeholder="https://facebook.com/yourprofile" value={formData.facebook || ""} onChange={handleInputChange} />
+                </div>
+                <div className="field">
+                  <label>LinkedIn Profile</label>
+                  <input type="url" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" value={formData.linkedin || ""} onChange={handleInputChange} />
+                </div>
+                <div className="field">
+                  <label>GitHub Profile</label>
+                  <input type="url" name="github" placeholder="https://github.com/yourusername" value={formData.github || ""} onChange={handleInputChange} />
+                </div>
+                <div className="field">
+                  <label>YouTube Channel</label>
+                  <input type="url" name="youtube" placeholder="https://youtube.com/@yourchannel" value={formData.youtube || ""} onChange={handleInputChange} />
+                </div>
+                <div className="field">
+                  <label>Instagram Account</label>
+                  <input type="url" name="instagram" placeholder="https://instagram.com/yourusername" value={formData.instagram || ""} onChange={handleInputChange} />
+                </div>
+              </div>
+            </div>
+
+            <div className="form-actions">
+              <button type="submit" className="add-btn">Register as Member</button>
+              <button type="button" className="connect-btn">Connect with Members</button>
+            </div>
           </form>
         </div>
       </motion.div>

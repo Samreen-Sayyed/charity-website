@@ -97,21 +97,43 @@
   box-shadow: 0 0 0 3px rgba(239, 95, 52, 0.1);
 }
 
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
 .add-btn {
-  background: #ef5f34;
+  background: #73b320;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 30px;
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
-  align-self: flex-start;
   transition: all 0.2s;
+  font-size: 1rem;
 }
 
 .add-btn:hover {
-  background: #d44d27;
+  background: #629a1a;
   transform: translateY(-1px);
+}
+
+.connect-btn {
+  background: white;
+  color: #73b320;
+  border: 1px solid #73b320;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.connect-btn:hover {
+  background: #f7fee7;
 }
 
 /* CONTROLS ROW */
