@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiArrowRight, FiCalendar } from 'react-icons/fi';
-import './SixthSection.css';
-=======
 import React, { useEffect } from 'react'
 import './sixthSection.css'
 
-// AOS
-import AOS from 'aos'
-import 'aos/dist/aos.css'
->>>>>>> 5cb26034742b5675030d90199e25aa187977b119
+import { motion } from "framer-motion";
+import { FiArrowRight, FiCalendar } from "react-icons/fi";
 
 // Images
 import EigthPic1 from "../../../Images/pic1-eightSection.jpg";
@@ -148,53 +140,44 @@ const SixthSection = () => {
                                         </div>
                                     </div>
 
-<<<<<<< HEAD
-                                    {/* Content Container */}
-                                    <div className="sixth-card-content">
-                                        <div className="card-theme-dot"></div>
-                                        <h3>{event.title}</h3>
-                                        <p>{event.desc}</p>
+                                    {/* CARD 1 */}
+                                    <div className='card' data-aos="zoom-in">
+                                        <img
+                                            src={EigthPic1}
+                                            alt="students receiving school supplies"
+                                        />
+                                        <h4>10 Jan, 2026</h4>
+                                        <h2>School Kit Distribution Drive</h2>
+                                        <p>
+                                            Distributed books, bags, and essentials to students in need.
+                                        </p>
                                     </div>
-=======
-                        {/* CARD 1 */}
-                        <div className='card' data-aos="zoom-in">
-                            <img
-                                src={EigthPic1}
-                                alt="students receiving school supplies"
-                            />
-                            <h4>10 Jan, 2026</h4>
-                            <h2>School Kit Distribution Drive</h2>
-                            <p>
-                                Distributed books, bags, and essentials to students in need.
-                            </p>
-                        </div>
 
-                        {/* CARD 2 */}
-                        <div className='card' data-aos="zoom-in" data-aos-delay="200">
-                            <img
-                                src={EigthPic2}
-                                alt="free medical camp checkup"
-                            />
-                            <h4>25 Feb, 2026</h4>
-                            <h2>Free Dental & Eye Camp</h2>
-                            <p>
-                                Organized health checkups and awareness programs for the community.
-                            </p>
-                        </div>
+                                    {/* CARD 2 */}
+                                    <div className='card' data-aos="zoom-in" data-aos-delay="200">
+                                        <img
+                                            src={EigthPic2}
+                                            alt="free medical camp checkup"
+                                        />
+                                        <h4>25 Feb, 2026</h4>
+                                        <h2>Free Dental & Eye Camp</h2>
+                                        <p>
+                                            Organized health checkups and awareness programs for the community.
+                                        </p>
+                                    </div>
 
-                        {/* CARD 3 */}
-                        <div className='card' data-aos="zoom-in" data-aos-delay="400">
-                            <img
-                                src={EigthPic3}
-                                alt="students receiving scholarships"
-                            />
-                            <h4>15 Mar, 2026</h4>
-                            <h2>Scholarship Award Program</h2>
-                            <p>
-                                Provided financial aid to deserving students for higher education.
-                            </p>
-                        </div>
->>>>>>> 5cb26034742b5675030d90199e25aa187977b119
+                                    {/* CARD 3 */}
+                                    <div className='card' data-aos="zoom-in" data-aos-delay="400">
+                                        <img
+                                            src={EigthPic3}
+                                            alt="students receiving scholarships"
+                                        />
+                                        <h4>15 Mar, 2026</h4>
+                                        <h2>Scholarship Award Program</h2>
+                                        <p>
+                                            Provided financial aid to deserving students for higher education.
+                                        </p>
+                                    </div>
 
                                     {/* Hover Glow Effect */}
                                     <div className="sixth-card-glow"></div>
