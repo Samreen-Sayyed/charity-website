@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './seventhSection.css'
+import './SeventhSection.css'
 
 // AOS
 import AOS from 'aos'
