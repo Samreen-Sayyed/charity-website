@@ -172,9 +172,9 @@ const TimelineJourney = () => {
               />
               <defs>
                 <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#4caf50" stopOpacity="0.2" />
-                  <stop offset="50%" stopColor="#81c784" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#2e7d32" stopOpacity="0.2" />
+                  <stop offset="0%" stopColor="#ef5f34" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#ef5f34" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#ef5f34" stopOpacity="0.2" />
                 </linearGradient>
               </defs>
             </svg>
@@ -189,19 +189,19 @@ const TimelineJourney = () => {
                   <div className="dot-pulse"></div>
                 </div>
 
-                <div className="milestone-card">
-                  <div className="milestone-image-container">
+                  <div className="milestone-image-side">
                     <img src={milestone.image} alt={milestone.title} className="milestone-img" loading="lazy" />
                     <div className="milestone-year-floating">{milestone.year}</div>
                     <div className="image-overlay"></div>
                   </div>
                   
-                  <div className="milestone-info">
-                    <h3 className="milestone-heading">{milestone.title}</h3>
-                    <p className="milestone-desc">{milestone.description}</p>
-                    <button className="milestone-btn">Discover More</button>
+                  <div className="milestone-info-side">
+                    <div className="milestone-info-card">
+                      <h3 className="milestone-heading">{milestone.title}</h3>
+                      <p className="milestone-desc">{milestone.description}</p>
+                      <button className="milestone-btn">Discover More</button>
+                    </div>
                   </div>
-                </div>
               </div>
             ))}
           </div>
