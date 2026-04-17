@@ -70,16 +70,22 @@ const MemberData = () => {
 
     try {
       // 1. SEND TO FORMSPREE
-      // Replace 'YOUR_FORM_ID' with your actual Formspree ID
+      const formSubmission = new FormData();
+      Object.keys(formData).forEach(key => {
+        formSubmission.append(key, formData[key]);
+      });
+
       const response = await fetch("https://formspree.io/f/mlgabreo", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formSubmission,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
       if (response.ok) {
         setStatus("success");
-
+        
         // 2. ADD TO LOCAL LIST (Dashboard feedback)
         const newMember = {
           ...formData,
@@ -90,11 +96,10 @@ const MemberData = () => {
         // 3. RESET FORM
         setFormData({
           name: "", email: "", type: "Normal", status: "Active", image: "",
-          desc: "", hobbies: "", facebook: "", linkedin: "", github: "",
+          desc: "", hobbies: "", facebook: "", linkedin: "", github: "", 
           youtube: "", instagram: ""
         });
 
-        // Clear success message after 5 seconds
         setTimeout(() => setStatus(""), 5000);
       } else {
         setStatus("error");
@@ -277,18 +282,17 @@ const MemberData = () => {
             <motion.div
               key={index}
               className="member-card"
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.1
+                duration: 0.4,
+                delay: index * 0.05
               }}
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 15px 35px rgba(239, 95, 52, 0.15)"
               }}
             >
-
               <img src={m.image} alt={m.name} className="profile-img" />
 
               <h3>{m.name}</h3>
