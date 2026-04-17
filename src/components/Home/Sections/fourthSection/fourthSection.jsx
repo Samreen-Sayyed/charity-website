@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react'
 import './fourthSection.css'
-
-import Education from "../../../Images/education.png"
-import money from "../../../Images/money.png"
-import FourthMedicine from "../../../Images/medicine_fourth.png"
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,10 +19,10 @@ const FourthSection = () => {
                 {/* HEADER */}
                 <div className='fourth-upper-container' data-aos="fade-up">
                     <h4>Our Work</h4>
-                    <h2>Our Impact Areas</h2>
+                    <h2>Our Work & Initiatives</h2>
                     <p>
-                        We are committed to improving lives through education, support,
-                        and healthcare initiatives in our community.
+                        For over 60 years, Malegaon Education Society has contributed
+                        to education, community development, and social welfare.
                     </p>
                 </div>
 
@@ -35,52 +30,54 @@ const FourthSection = () => {
                 <div className='fourth-lower-container'>
                     <div className='fourth-lower-column-container'>
 
-                        {/* EDUCATION */}
+                        <div className='card' data-aos="fade-up">
+                            <h3>Education & Scholarships</h3>
+                            <p>
+                                For over 60 years, scholarships have been provided to thousands
+                                of students from Malegaon, helping them pursue higher education
+                                and preventing talent from being wasted.
+                            </p>
+                        </div>
+
                         <div className='card' data-aos="fade-up" data-aos-delay="100">
-                            <img 
-                                src={Education} 
-                                className="img-template" 
-                                alt="students studying in classroom"  /* ✅ FIXED */
-                            />
-                            <h2>Student Education Support</h2>
+                            <h3>Urdu Medium School</h3>
                             <p>
-                                Providing books, guidance, and support for students to build a better future.
+                                Established in 2013, the school offers modern classrooms,
+                                labs, and facilities. Built on 10,000 sq. ft., it is one of
+                                the most advanced educational institutions in the city.
                             </p>
-                            <div className='impact'>
-                                <span>25,000+ Students Supported</span>
-                            </div>
                         </div>
 
-                        {/* SCHOLARSHIP */}
                         <div className='card' data-aos="fade-up" data-aos-delay="200">
-                            <img 
-                                src={money} 
-                                className="img-template" 
-                                alt="students receiving scholarships"
-                            />
-                            <h2>Scholarship Programs</h2>
+                            <h3>Book Fairs & Literary Events</h3>
                             <p>
-                                Financial assistance for deserving students to continue their education.
+                                Organized National Urdu Book Fairs in 2014 & 2021 and
+                                supported international literary festival “Rashk-e-Baharan” in 2024.
                             </p>
-                            <div className='impact'>
-                                <span>500+ Scholarships Given</span>
-                            </div>
                         </div>
 
-                        {/* MEDICAL */}
-                        <div className='card' data-aos="fade-up" data-aos-delay="300">
-                            <img 
-                                src={FourthMedicine} 
-                                className="img-template" 
-                                alt="medical camp health checkup" 
-                            />
-                            <h2>Free Medical Camps</h2>
+                        <div className='card' data-aos="fade-up">
+                            <h3>Skill Development</h3>
                             <p>
-                                Organizing dental, eye checkups, and health awareness camps.
+                                Conducted English coaching classes and established one of the
+                                earliest computer centres in Malegaon.
                             </p>
-                            <div className='impact'>
-                                <span>1000+ Patients Treated</span>
-                            </div>
+                        </div>
+
+                        <div className='card' data-aos="fade-up" data-aos-delay="100">
+                            <h3>Relief Work</h3>
+                            <p>
+                                During lockdown, food supplies worth millions were distributed
+                                to support families in need with dignity.
+                            </p>
+                        </div>
+
+                        <div className='card' data-aos="fade-up" data-aos-delay="200">
+                            <h3>Community Engagement</h3>
+                            <p>
+                                “Shaam-e-Mulaqat” events connect Malegaon community and honor
+                                pioneers while continuing their legacy.
+                            </p>
                         </div>
 
                     </div>

@@ -18,7 +18,7 @@ function Navbar() {
         <div className='center-buttons'>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/Founder">Founders & Office Bearers</Link>
+          <Link to="/Founders">Founders & Office Bearers</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/scholarship">Scholarship</Link>
           <Link to="/member-type">Member Type</Link>

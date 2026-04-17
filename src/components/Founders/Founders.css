@@ -1,49 +1,123 @@
-.founders-container {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* ================== BASE ================== */
 
-.founders-container h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #333;
-}
-
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.member-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.founder-legacy {
   padding: 20px;
   text-align: center;
 }
 
-.member-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+/* HEADER */
+.legacy-header {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.legacy-header h1 {
+  font-size: 40px;
+  color: #EF5F34;
+}
+
+.legacy-header h2 {
+  font-size: 20px;
+}
+
+/* IMAGE */
+.legacy-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 15px;
+}
+
+/* ================== TABLE ================== */
+
+/* WRAPPER */
+.meeting-table-wrapper {
+  max-width: 1100px;
+  margin: 50px auto;
+
+  display: flex;
+  gap: 30px;
+
+  align-items: stretch; /* 🔥 IMPORTANT FIX */
+}
+
+/* LEFT TABLE */
+.table-left {
+  flex: 2;
+}
+
+.table-left h3 {
+  color: #EF5F34;
   margin-bottom: 15px;
 }
 
-.member-card h2 {
-  margin: 10px 0;
-  color: #333;
+.table-left table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.member-card h3 {
-  margin: 5px 0 15px;
-  color: #666;
-  font-weight: normal;
+.table-left th {
+  background: #EF5F34;
+  color: #fff;
+  padding: 10px;
 }
 
-.member-card p {
-  color: #555;
-  line-height: 1.5;
+.table-left td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-left tr:hover {
+  background: #f9f9f9;
+}
+
+/* RIGHT IMAGE */
+.table-right {
+  flex: 1;
+  display: flex;
+}
+
+/* 🔥 IMAGE FULL HEIGHT FIX */
+.table-right img {
+  width: 100%;
+  height: 100%;           /* 🔥 MATCH TABLE HEIGHT */
+  object-fit: contain;    /* 🔥 BEST FOR DOCUMENT */
+  border-radius: 10px;
+
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.2),
+    0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* ================== CURRENT TEAM ================== */
+
+.current-team {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.team-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 15px;
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 768px) {
+
+  .meeting-table-wrapper {
+    flex-direction: column;
+  }
+
+  .table-right img {
+    height: auto; /* 🔥 reset for mobile */
+  }
+
+  .legacy-header h1 {
+    font-size: 28px;
+  }
+
+  .meeting-table table {
+    font-size: 12px;
+  }
 }
