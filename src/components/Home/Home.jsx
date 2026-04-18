@@ -5,7 +5,7 @@ import SecondSection from './Sections/secondSection/secondSection.jsx'
 import ThirdSection from './Sections/thirdSection/thirdSection.jsx'
 import FourthSection from './Sections/fourthSection/fourthSection.jsx'
 import FifthSection from './Sections/fifthSection/fifthSection.jsx'
-import SixthSection from './Sections/sixthSection/sixthSection.jsx'
+import SixthSection from './Sections/sixthSection/SixthSection.jsx'
 import SeventhSection from './Sections/seventhSection/seventhSection.jsx'
 import TenthSection from './Sections/tenthSection/tenthSection'
 const Home = () => {
@@ -14,6 +14,7 @@ const Home = () => {
       < FirstSection />
       < SecondSection />
       < ThirdSection />
+      <FourthSection />
       < FifthSection />
       < SixthSection />
       < SeventhSection />

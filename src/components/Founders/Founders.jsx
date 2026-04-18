@@ -79,8 +79,9 @@ const Founders = () => {
       {/* ================= FIRST MEETING MEMBERS ================= */}
       <section className="meeting-members-section">
         <div className="members-header" data-aos="fade-up">
-          <h2>First Meeting Members</h2>
-          <p>5th December 1943</p>
+          <h2>Members of First Meeting</h2>
+
+          <p>Held on 5th December 1943</p>
         </div>
 
         <div className="members-layout">
@@ -101,16 +102,35 @@ const Founders = () => {
             </div>
           </div>
 
-          {/* Featured Document */}
-          <div className="featured-doc-container" data-aos="zoom-in" data-aos-delay="200">
-            <div className="doc-presentation">
-              <h3>Original Document</h3>
-              <div className="doc-frame pulse-frame" onClick={() => setIsOpen(true)}>
-                <img src={firstmeet} alt="First Meeting Document" />
-                <div className="doc-hover-overlay">
-                  <span className="view-text">Click to View</span>
+          {/* Right Column: Document + Extra Info */}
+          <div className="right-column-container" data-aos="zoom-in" data-aos-delay="200">
+            {/* Featured Document */}
+            <div className="featured-doc-container">
+              <div className="doc-presentation">
+                <h3>Minutes of First Meeting</h3>
+                <div className="doc-frame pulse-frame" onClick={() => setIsOpen(true)}>
+                  <img src={firstmeet} alt="First Meeting Document" />
+                  <div className="doc-hover-overlay">
+                    <span className="view-text">Click to View</span>
+                  </div>
+                </div>
+                <div className="doc-description">
+                  <p>
+                    The historical manuscript recording the minutes of the inaugural meeting, bearing the signatures of the founding members.
+                  </p>
+                  <div className="doc-decorative-line"></div>
                 </div>
               </div>
+            </div>
+
+            {/* Decorative Quote Card to fill space */}
+            <div className="mission-quote-card">
+              <div className="quote-icon">❝</div>
+              <p>
+                "A journey of a thousand miles begins with a single step.
+                Our founders took that step in 1943, creating a lasting legacy of education, unity, and empowerment."
+              </p>
+              <div className="quote-author">— The Founding Vision</div>
             </div>
           </div>
         </div>
