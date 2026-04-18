@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Tiers | Malegaon Education Society</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .type-hero {
+            background: linear-gradient(rgba(18, 14, 54, 0.9), rgba(18, 14, 54, 0.9)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop') center/cover;
+            padding: 180px 0 100px;
+            color: white;
+            text-align: center;
+        }
+
+        .tier-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        .tier-card.featured {
+            border: 2px solid #EF5F34;
+            box-shadow: 0 15px 40px rgba(239, 95, 52, 0.15);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #EF5F34;
+            color: white;
+            padding: 8px 45px;
+            transform: rotate(45deg);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .tier-icon {
+            font-size: 3rem;
+            color: #EF5F34;
+            margin-bottom: 25px;
+        }
+
+        .tier-name {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #120e36;
+            margin-bottom: 20px;
+        }
+
+
+
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            flex-grow: 1;
+        }
+
+        .tier-features li {
+            padding: 12px 0;
+            color: #555;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .tier-features li i {
+            color: #28a745;
+        }
+
+        .tier-btn {
+            background: #120e36;
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .tier-card:hover .tier-btn {
+            background: #EF5F34;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(239, 95, 52, 0.3);
+        }
+
+        .modern-footer { background: #120e36 !important; color: white; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+    <div class="container-fluid navbar-container">
+        <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo" id="charitioLogo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto center-buttons">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="founders.html">Founders & Office Bearers</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link active" href="member-type.html">Member Type</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-data.html">Member Data</a></li>
+            </ul>
+            <div class="right-buttons d-flex gap-3 align-items-center">
+                <a href="login.html" class="login-btn">Log in</a>
+                <a href="signup.html" class="signup-btn">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="type-hero">
+    <div class="container" data-aos="zoom-in">
+        <h1 class="display-3 fw-bold mb-3">Membership Tiers</h1>
+        <div style="width: 80px; height: 4px; background: #EF5F34; margin: 0 auto 30px;"></div>
+        <p class="lead mx-auto opacity-75" style="max-width: 700px;">Choose a path that fits your commitment. Every member contributes to a stronger, more educated community.</p>
+    </div>
+</section>
+
+<section class="py-5 mt-5">
+    <div class="container py-5">
+        <div class="row g-5 justify-content-center">
+            
+            <!-- Tier 1 -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="tier-card">
+                    <div class="tier-icon"><i class="fas fa-user"></i></div>
+                    <h2 class="tier-name">Normal Member</h2>
+
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check-circle"></i> Digital membership card</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly society newsletter</li>
+                        <li><i class="fas fa-check-circle"></i> Invitation to local events</li>
+                        <li><i class="fas fa-check-circle"></i> Volunteer opportunities</li>
+                        <li><i class="fas fa-check-circle"></i> Access to community center</li>
+                    </ul>
+                    <a href="signup.html" class="tier-btn text-center text-decoration-none">Become a Member</a>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="col-lg-5" data-aos="fade-left">
+                <div class="tier-card featured">
+                    <div class="featured-badge">Premium</div>
+                    <div class="tier-icon"><i class="fas fa-crown"></i></div>
+                    <h2 class="tier-name">Elite Member</h2>
+
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check-circle"></i> Everything in Normal</li>
+                        <li><i class="fas fa-check-circle"></i> Voting rights in annual meets</li>
+                        <li><i class="fas fa-check-circle"></i> Sponsor recognition board</li>
+                        <li><i class="fas fa-check-circle"></i> Priority event seating</li>
+                        <li><i class="fas fa-check-circle"></i> Direct impact on scholarship</li>
+                        <li><i class="fas fa-check-circle"></i> Exclusive networking events</li>
+                    </ul>
+                    <a href="signup.html" class="tier-btn text-center text-decoration-none">Join as Elite</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="modern-footer mt-5">
+    <div class="container py-5">
+        <div class="row g-4 text-center text-md-start">
+            <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
+                <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
+                <p class="footer-desc opacity-75">Establishing a legacy of excellence since 1943. Join us in shaping the future of Malegaon.</p>
+                <div class="social-buttons d-flex gap-3 justify-content-center justify-content-md-start">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 footer-col offset-lg-1" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="footer-heading mb-4">Quick Navigation</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="footer-links list-unstyled">
+                            <li class="mb-2"><a href="index.html" class="text-decoration-none text-white opacity-75">Home</a></li>
+                            <li class="mb-2"><a href="about.html" class="text-decoration-none text-white opacity-75">Our Story</a></li>
+                            <li class="mb-2"><a href="projects.html" class="text-decoration-none text-white opacity-75">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="footer-links list-unstyled">
+                            <li class="mb-2"><a href="scholarship.html" class="text-decoration-none text-white opacity-75">Scholarship</a></li>
+                            <li class="mb-2"><a href="founders.html" class="text-decoration-none text-white opacity-75">Leadership</a></li>
+                            <li class="mb-2"><a href="contact.html" class="text-decoration-none text-white opacity-75">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="footer-heading mb-4">Stay Connected</h3>
+                <p class="small opacity-75">Subscribe for updates on community impact.</p>
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="email address">
+                    <button class="btn btn-orange text-white" type="button">Go</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>

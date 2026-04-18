@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impactful Projects | Malegaon Education Society</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .projects-wrapper {
+            background: #fafbfc;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        /* Animated Blobs */
+        .proj-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(239, 95, 52, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            filter: blur(80px);
+            animation: blobFloat 20s infinite alternate;
+        }
+        .proj-blob-1 { top: -100px; right: -100px; }
+        .proj-blob-2 { bottom: 100px; left: -200px; background: radial-gradient(circle, rgba(18, 14, 54, 0.05) 0%, transparent 70%); }
+        .proj-blob-3 { top: 40%; left: 30%; width: 300px; height: 300px; }
+
+        @keyframes blobFloat {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(30px, 40px) scale(1.1); }
+        }
+
+        .project-header {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proj-badge {
+            background: rgba(239, 95, 52, 0.1);
+            color: #EF5F34;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .proj-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proj-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(239, 95, 52, 0.12);
+            border-color: var(--hover-color, #EF5F34);
+        }
+
+        .proj-img-wrap {
+            height: 260px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .proj-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .proj-card:hover .proj-img-wrap img {
+            transform: scale(1.15);
+        }
+
+        .proj-year {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(18, 14, 54, 0.8);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .proj-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .proj-card:hover .proj-overlay {
+            opacity: 1;
+        }
+
+        .proj-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .proj-content h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #120e36;
+            margin-bottom: 15px;
+        }
+
+        .proj-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .proj-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .impact-text {
+            color: #EF5F34;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .explore-btn {
+            background: transparent;
+            border: none;
+            color: #120e36;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: gap 0.3s ease, color 0.3s ease;
+        }
+
+        .proj-card:hover .explore-btn {
+            color: var(--hover-color, #EF5F34);
+            gap: 15px;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 30px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+        }
+
+        .modal-img-wrap {
+            height: 100%;
+            min-height: 300px;
+        }
+
+        .modal-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-year {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: #EF5F34;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+
+        .modal-body-content {
+            padding: 50px;
+        }
+
+        .modal-impact {
+            background: rgba(239, 95, 52, 0.1);
+            color: #EF5F34;
+            padding: 8px 18px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .modern-footer { background: #120e36 !important; color: rgba(255, 255, 255, 0.8); }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+    <div class="container-fluid navbar-container">
+        <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo" id="charitioLogo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto center-buttons">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="founders.html">Founders & Office Bearers</a></li>
+                <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-type.html">Member Type</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-data.html">Member Data</a></li>
+            </ul>
+            <div class="right-buttons d-flex gap-3 align-items-center">
+                <a href="login.html" class="login-btn">Log in</a>
+                <a href="signup.html" class="signup-btn">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="projects-wrapper">
+    <div class="proj-blob proj-blob-1"></div>
+    <div class="proj-blob proj-blob-2"></div>
+    <div class="proj-blob proj-blob-3"></div>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="project-header text-center" data-aos="fade-up">
+                <span class="proj-badge">Our Roadmap</span>
+                <h1 class="display-4 fw-bold mb-4" style="color: #120e36;">Impactful Projects</h1>
+                <p class="text-secondary lead">Driving real change across education, healthcare, and community development. Discover the stories behind our initiatives.</p>
+                <div style="width: 70px; height: 5px; background: #EF5F34; border-radius: 10px; margin: 2rem auto;"></div>
+            </div>
+
+            <div class="row g-5" id="projectsGrid">
+                <!-- JS Populated -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="row g-0">
+                <div class="col-lg-5 position-relative">
+                    <div class="modal-img-wrap">
+                        <img id="mImg" src="" alt="Project">
+                    </div>
+                    <div class="modal-year" id="mYear">2025</div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="modal-body-content">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="fw-bold fs-1 m-0" id="mTitle" style="color: #120e36;"></h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-impact">
+                            <i class="fas fa-star me-2"></i> <span id="mImpact"></span>
+                        </div>
+                        <p id="mFullDesc" class="fs-5 text-secondary lh-lg mb-5"></p>
+                        <button class="btn signup-btn py-3 px-5 border-0 shadow" data-bs-dismiss="modal">Close Discovery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="modern-footer mt-5">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
+                <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
+                <p class="footer-desc">Welcome to Malegoan Education Society. Empowering the community through knowledge, dedication, and impactful initiatives since 1943.</p>
+                <div class="social-buttons d-flex gap-2">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links list-unstyled mt-3">
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="projects.html" class="text-decoration-none">Impact</a></li>
+                    <li class="mb-2"><a href="founders.html" class="text-decoration-none">Leadership</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="footer-heading">Contact Info</h3>
+                <div class="d-flex gap-3 mb-3 mt-3">
+                    <i class="fas fa-envelope mt-1 text-orange"></i>
+                    <span class="small">TheEducationSocietyofMalegoan@gmail.com</span>
+                </div>
+                <div class="d-flex gap-3 mb-3">
+                    <i class="fas fa-phone-alt text-orange"></i>
+                    <span class="small">+888 (123) 869523</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p class="small opacity-75 mt-3">Stay updated with our latest project impacts.</p>
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="Your email">
+                    <button class="btn btn-orange text-white" type="button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+    const projects = [
+        {
+            id: 1,
+            title: "School Built",
+            description: "Built classrooms and improved learning spaces for children.",
+            fullDescription: "Improved education in remote areas by building state-of-the-art classrooms, providing essential learning materials, and ensuring a safe, inspiring environment for the next generation of students. We focused on sustainable building practices and ergonomic furniture.",
+            image: "images/school-project.jpg",
+            impact: "200+ children benefited",
+            year: "2025",
+            color: "#4facfe",
+        },
+        {
+            id: 2,
+            title: "Medical Camps Outreach",
+            description: "Free health checkups and medicine support for underserved families.",
+            fullDescription: "Organized free medical camps in rural and underserved communities, bringing specialized doctors, free medicine, and essential health checkups directly to those who need it most. We served over 5000 patients in the last quarter alone.",
+            image: "images/medical-camp.jpg",
+            impact: "500 families served",
+            year: "2025",
+            color: "#ff0844",
+        },
+        {
+            id: 3,
+            title: "Scholarship Program",
+            description: "Educational support for underprivileged students.",
+            fullDescription: "Launched a comprehensive scholarship fund aimed at helping bright, underprivileged students pursue higher education without the burden of financial stress. Covers books, tuition, and basic living allowances.",
+            image: "images/Scholarship.png",
+            impact: "200 students supported",
+            year: "2026",
+            color: "#f83600",
+        },
+        {
+            id: 4,
+            title: "Vocational Training",
+            description: "Skill development for sustainable livelihoods.",
+            fullDescription: "Providing hands-on vocational training programs for youth and adults, empowering them with the skills needed to secure sustainable jobs and start their own businesses. Courses include tailoring, computer literacy, and basic electronics.",
+            image: "images/volunteer.png",
+            impact: "150 individuals trained",
+            year: "2026",
+            color: "#4facfe",
+        },
+        {
+            id: 5,
+            title: "Clean Water Initiative",
+            description: "Installing clean water pumps in remote villages.",
+            fullDescription: "Ensuring access to safe, clean drinking water by installing deep-water pumps and filtration systems in villages that previously lacked reliable water sources. This initiative significantly reduced water-borne diseases.",
+            image: "images/water-tap.png",
+            impact: "30 villages supplied",
+            year: "2026",
+            color: "#00c6fb",
+        }
+    ];
+
+    const grid = document.getElementById('projectsGrid');
+    grid.innerHTML = projects.map((p, i) => `
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${i * 100}">
+            <div class="proj-card" style="--hover-color: ${p.color}">
+                <div class="proj-img-wrap">
+                    <div class="proj-year">${p.year}</div>
+                    <div class="proj-overlay"></div>
+                    <img src="${p.image}" alt="${p.title}">
+                </div>
+                <div class="proj-content">
+                    <h3>${p.title}</h3>
+                    <p>${p.description}</p>
+                    <div class="proj-footer">
+                        <div class="impact-text"><i class="fas fa-certificate"></i> ${p.impact}</div>
+                        <button class="explore-btn" onclick='openProj(${JSON.stringify(p).replace(/'/g, "&apos;")})'>
+                            Explore <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    function openProj(p) {
+        document.getElementById('mTitle').innerText = p.title;
+        document.getElementById('mImpact').innerText = p.impact;
+        document.getElementById('mFullDesc').innerText = p.fullDescription;
+        document.getElementById('mYear').innerText = p.year;
+        document.getElementById('mImg').src = p.image;
+        new bootstrap.Modal(document.getElementById('projectModal')).show();
+    }
+
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
