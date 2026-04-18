@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard | Malegaon Education Society</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Lime Green Theme */
+        :root {
+            --primary-lime: #76b31e;
+            --primary-navy: #120e36;
+        }
+
+        .dashboard-wrapper {
+            background: #fff;
+            min-height: 100vh;
+            padding-top: 120px;
+            position: relative;
+        }
+
+        /* Backgroundblobs */
+        .bg-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(118, 179, 30, 0.05);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .registration-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-content {
+            padding: 50px 60px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-header h2 {
+            font-weight: 700;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .form-header a {
+            color: var(--primary-lime);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-subsection-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 25px;
+            margin-top: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .form-control, .form-select {
+            border-radius: 6px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+            background: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #bbb;
+        }
+
+        .upload-btn {
+            background: #c1ff52; /* Lighter lime for buttons */
+            background: linear-gradient(to bottom, #d4ff7d, #a8df38);
+            border: 1px solid #99cc33;
+            color: #333;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .register-submit-btn {
+            background: #76b31e;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .register-submit-btn:hover {
+            background: #629618;
+            box-shadow: 0 5px 15px rgba(118, 179, 30, 0.3);
+        }
+
+        .connect-btn {
+            border: 1px solid #ddd;
+            background: white;
+            color: #333;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .connect-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .signup-btn { background: #76b31e !important; border-color: #76b31e !important; }
+
+
+        /* Dashboard Controls */
+        .controls-card {
+            background: white;
+            border-radius: 50px;
+            padding: 10px 10px 10px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-input {
+            border: none;
+            flex-grow: 1;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .filter-group {
+            display: flex;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 40px;
+        }
+
+        .filter-btn {
+            border: none;
+            padding: 8px 25px;
+            border-radius: 35px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            background: transparent;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: white;
+            color: #120e36;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Member Card Styles */
+        .member-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(239, 95, 52, 0.1);
+            border-color: rgba(239, 95, 52, 0.2);
+        }
+
+        .member-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-name {
+            font-weight: 800;
+            color: #120e36;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .member-desc {
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .member-email {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #EF5F34;
+            margin-bottom: 20px;
+        }
+
+        .member-badges {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .badge-type {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .badge-normal { background: rgba(108, 117, 125, 0.1); color: #6c757d; }
+        .badge-elite { background: rgba(239, 95, 52, 0.1); color: #EF5F34; }
+
+        .badge-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .badge-active { background: rgba(40, 167, 69, 0.1); color: #28a745; }
+        .badge-inactive { background: rgba(220, 53, 69, 0.1); color: #dc3545; }
+
+        .modern-footer { background: #120e36 !important; color: white; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+    <div class="container-fluid navbar-container">
+        <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo" id="charitioLogo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto center-buttons">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="founders.html">Founders & Office Bearers</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-type.html">Member Type</a></li>
+                <li class="nav-item"><a class="nav-link active" href="member-data.html">Member Data</a></li>
+            </ul>
+            <div class="right-buttons d-flex gap-3 align-items-center">
+                <a href="login.html" class="login-btn">Log in</a>
+                <a href="signup.html" class="signup-btn">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="dashboard-wrapper">
+    <div class="bg-blob" style="top: 10%; left: -10%;"></div>
+    <div class="bg-blob" style="bottom: 20%; right: -10%; background:rgba(18, 14, 54, 0.03);"></div>
+
+    <div class="container">
+        <!-- REGISTRATION FORM -->
+        <div class="registration-card" data-aos="fade-up">
+            <div class="form-content">
+                <div class="form-header">
+                    <h2>Member Registration</h2>
+                    <p>Already have an account? <a href="#">Sign In</a></p>
+                </div>
+
+                <div id="spreeStatus" class="status-msg"></div>
+
+                <form action="https://formspree.io/f/xojydalr" method="POST" id="memberForm">
+                    
+                    <!-- Photograph -->
+                    <div class="mb-5">
+                        <label class="form-label d-block">Photograph *</label>
+                        <div class="upload-btn" onclick="document.getElementById('photoInput').click()">Upload Photo</div>
+                        <input type="file" id="photoInput" name="photo" style="display:none">
+                    </div>
+
+                    <!-- PERSONAL -->
+                    <div class="form-subsection">
+                        <div class="form-subsection-title">Personal Information</div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <label class="form-label">First Name</label>
+                                <input type="text" name="firstName" class="form-control" placeholder="Enter first name" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Middle Name</label>
+                                <input type="text" name="middleName" class="form-control" placeholder="Enter middle name">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" name="lastName" class="form-control" placeholder="Enter last name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email ID</label>
+                                <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Contact No</label>
+                                <input type="text" name="contact" class="form-control" placeholder="+91 9876543210">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" name="dob" class="form-control" placeholder="dd-mm-yyyy">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Password</label>
+                                <div class="position-relative">
+                                    <input type="password" name="password" class="form-control" placeholder="Create a secure password">
+                                    <i class="far fa-eye position-absolute top-50 end-0 translate-middle-y me-3 text-secondary" style="cursor:pointer"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ADDRESS -->
+                    <div class="form-subsection">
+                        <div class="form-subsection-title">Address Information</div>
+                        
+                        <!-- Mumbai Address Row 1 -->
+                        <div class="mb-4">
+                            <h6 class="form-label fw-bold mb-3">Mumbai Address</h6>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">House/Flat No. *</label>
+                                    <input type="text" name="mumbaiHouse" class="form-control" placeholder="101">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Building Name *</label>
+                                    <input type="text" name="mumbaiBuilding" class="form-control" placeholder="Enter building name">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Street Address *</label>
+                                    <input type="text" name="mumbaiStreet" class="form-control" placeholder="Enter street name">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mumbai Address Row 2 -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Area/Locality *</label>
+                                <input type="text" name="mumbaiLocality" class="form-control" placeholder="Enter area or locality">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">City *</label>
+                                <input type="text" name="mumbaiCity" class="form-control" placeholder="Mumbai">
+                            </div>
+                        </div>
+                        <!-- Mumbai Address Row 3 -->
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-6">
+                                <label class="form-label">State *</label>
+                                <input type="text" name="mumbaiState" class="form-control" placeholder="Maharashtra">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Pincode *</label>
+                                <input type="text" name="mumbaiPincode" class="form-control" placeholder="400001">
+                            </div>
+                        </div>
+
+                        <!-- Malegaon Address Row 1 -->
+                        <div class="mb-4">
+                            <h6 class="form-label fw-bold mb-3">Malegaon Address</h6>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <label class="form-label">House/Flat No. *</label>
+                                    <input type="text" name="malegaonHouse" class="form-control" placeholder="101">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Building Name *</label>
+                                    <input type="text" name="malegaonBuilding" class="form-control" placeholder="Enter building name">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Street Address *</label>
+                                    <input type="text" name="malegaonStreet" class="form-control" placeholder="Enter street name">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Malegaon Address Row 2 -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Area/Locality *</label>
+                                <input type="text" name="malegaonLocality" class="form-control" placeholder="Enter area or locality">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">City *</label>
+                                <input type="text" name="malegaonCity" class="form-control" placeholder="Malegaon">
+                            </div>
+                        </div>
+                        <!-- Malegaon Address Row 3 -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">State *</label>
+                                <input type="text" name="malegaonState" class="form-control" placeholder="Maharashtra">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Pincode *</label>
+                                <input type="text" name="malegaonPincode" class="form-control" placeholder="423203">
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">In Mumbai Since (Year)</label>
+                                <input type="number" name="mumbaiSince" class="form-control" placeholder="2020">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROFESSIONAL -->
+                    <div class="form-subsection">
+                        <div class="form-subsection-title">Professional Information</div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Profession</label>
+                                <input type="text" name="profession" class="form-control" placeholder="e.g., Software Engineer">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Years of Experience</label>
+                                <input type="number" name="experience" class="form-control" placeholder="5">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Domain/Specialization</label>
+                                <input type="text" name="domain" class="form-control" placeholder="e.g., Web Development">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Years of Experience in Domain</label>
+                                <input type="number" name="domainExperience" class="form-control" placeholder="3">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label d-block">CV Upload *</label>
+                                <div class="upload-btn" onclick="document.getElementById('cvInput').click()">Upload CV</div>
+                                <input type="file" id="cvInput" name="cv" style="display:none">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Awards/Achievements</label>
+                                <textarea name="awards" class="form-control" rows="3" placeholder="List your awards and achievements"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SOCIAL -->
+                    <div class="form-subsection">
+                        <div class="form-subsection-title">Social Media & Interests</div>
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <label class="form-label">Hobbies</label>
+                                <textarea name="hobbies" class="form-control" rows="3" placeholder="Tell us about your hobbies and interests"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Facebook Profile</label>
+                                <input type="url" name="facebook" class="form-control" placeholder="https://facebook.com/yourprofile">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">LinkedIn Profile</label>
+                                <input type="url" name="linkedin" class="form-control" placeholder="https://linkedin.com/in/yourprofile">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">GitHub Profile</label>
+                                <input type="url" name="github" class="form-control" placeholder="https://github.com/yourusername">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">YouTube Channel</label>
+                                <input type="url" name="youtube" class="form-control" placeholder="https://youtube.com/@yourchannel">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Instagram Account</label>
+                                <input type="url" name="instagram" class="form-control" placeholder="https://instagram.com/yourusername">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3 mt-5">
+                        <button type="submit" class="register-submit-btn">Register as Member</button>
+                        <button type="button" class="connect-btn" onclick="document.getElementById('directorySection').scrollIntoView({behavior:'smooth'})">Connect with Members</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- DIRECTORY SECTION -->
+        <div id="directorySection" class="pt-4">
+            <div class="controls-card" data-aos="fade-up">
+                <i class="fas fa-search text-secondary"></i>
+                <input type="text" id="memberSearch" class="search-input" placeholder="Search members by name or email...">
+                <div class="filter-group">
+                    <button class="filter-btn active" onclick="setFilter('All', this)">All</button>
+                    <button class="filter-btn" onclick="setFilter('Normal', this)">Normal</button>
+                    <button class="filter-btn" onclick="setFilter('Elite', this)">Elite</button>
+                </div>
+            </div>
+
+            <div class="row g-4" id="memberGrid">
+                <!-- JS Populated -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="modern-footer">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
+                <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
+                <p class="footer-desc">Empowering the community through knowledge, dedication, and impactful initiatives since 1943.</p>
+                <div class="social-buttons d-flex gap-2">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links list-unstyled mt-3">
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="projects.html" class="text-decoration-none">Impact</a></li>
+                    <li class="mb-2"><a href="founders.html" class="text-decoration-none">Leadership</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="footer-heading">Contact Info</h3>
+                <div class="d-flex gap-3 mb-3 mt-3">
+                    <i class="fas fa-envelope mt-1 text-orange"></i>
+                    <span class="small">TheEducationSocietyofMalegoan@gmail.com</span>
+                </div>
+                <div class="d-flex gap-3 mb-3">
+                    <i class="fas fa-phone-alt text-orange"></i>
+                    <span class="small">+888 (123) 869523</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p class="small opacity-75 mt-3">Join our community newsletter.</p>
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="Your email">
+                    <button class="btn btn-orange text-white" type="button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+    const members = [
+        { name: "Ali Khan", email: "ali@gmail.com", type: "Normal", status: "Active", image: "https://i.pravatar.cc/150?img=1", desc: "Active community member supporting education initiatives." },
+        { name: "Sara Sheikh", email: "sara@gmail.com", type: "Elite", status: "Active", image: "https://i.pravatar.cc/150?img=5", desc: "Dedicated volunteer contributing to scholarship programs." },
+        { name: "Ahmed Shaikh", email: "ahmed@gmail.com", type: "Normal", status: "Inactive", image: "https://i.pravatar.cc/150?img=8", desc: "Previously active member involved in outreach activities." },
+        { name: "Zoya Khan", email: "zoya@gmail.com", type: "Elite", status: "Active", image: "https://i.pravatar.cc/150?img=12", desc: "Elite member supporting events and educational growth." }
+    ];
+
+    let currentFilter = 'All';
+    let searchQuery = '';
+
+    function renderMembers() {
+        const grid = document.getElementById('memberGrid');
+        const filtered = members.filter(m => {
+            const matchesSearch = m.name.toLowerCase().includes(searchQuery) || m.email.toLowerCase().includes(searchQuery);
+            const matchesFilter = currentFilter === 'All' || m.type === currentFilter;
+            return matchesSearch && matchesFilter;
+        });
+
+        if (filtered.length === 0) {
+            grid.innerHTML = '<div class="col-12 text-center py-5 text-secondary">No members found matching your criteria.</div>';
+            return;
+        }
+
+        grid.innerHTML = filtered.map((m, i) => `
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="${i * 50}">
+                <div class="member-card">
+                    <img src="${m.image}" alt="${m.name}" class="member-avatar">
+                    <div class="member-name">${m.name}</div>
+                    <div class="member-desc">${m.desc}</div>
+                    <div class="member-email">${m.email}</div>
+                    <div class="member-badges">
+                        <span class="badge-type ${m.type === 'Elite' ? 'badge-elite' : 'badge-normal'}">${m.type}</span>
+                        <span class="badge-status ${m.status === 'Active' ? 'badge-active' : 'badge-inactive'}">${m.status}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function setFilter(type, btn) {
+        currentFilter = type;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderMembers();
+    }
+
+    document.getElementById('memberSearch').addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        renderMembers();
+    });
+
+    // Form Status Handling (Mock success for static demo, usually handled via URL params from Formspree)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success')) {
+        const status = document.getElementById('spreeStatus');
+        status.innerText = "Registration sent successfully!";
+        status.classList.add('success');
+    }
+
+    renderMembers();
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>

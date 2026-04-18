@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships | Malegaon Education Society</title>
+    <meta name="description" content="Explore scholarship opportunities and interest-free loans provided by Malegaon Education Society to support bright students.">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .scholarship-hero {
+            background: linear-gradient(rgba(18, 14, 54, 0.8), rgba(18, 14, 54, 0.8)), url('https://images.unsplash.com/photo-1523050853063-bd8012fec04a?q=80&w=1600&auto=format&fit=crop') center/cover;
+            padding: 160px 0 100px;
+            color: white;
+            text-align: center;
+        }
+
+        .scholar-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scholar-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(239, 95, 52, 0.15);
+            border-color: rgba(239, 95, 52, 0.2);
+        }
+
+        .scholar-img-wrap {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scholar-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .scholar-card:hover .scholar-img-wrap img {
+            transform: scale(1.1);
+        }
+
+        .scholar-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #EF5F34;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(239, 95, 52, 0.3);
+        }
+
+        .scholar-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .scholar-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #120e36;
+            margin-bottom: 12px;
+        }
+
+        .scholar-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .scholar-capsules {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .cap {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cap-green { background: rgba(40, 167, 69, 0.1); color: #28a745; }
+        .cap-orange { background: rgba(239, 95, 52, 0.1); color: #EF5F34; }
+
+        .steps-section {
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #EF5F34;
+            border: 2px solid #EF5F34;
+            font-size: 24px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(239, 95, 52, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover .step-number {
+            background: #EF5F34;
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(239, 95, 52, 0.3);
+        }
+
+        .step-item h4 {
+            font-weight: 800;
+            color: #120e36;
+            margin-bottom: 10px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #EF5F34, #ff9b7d);
+            border-radius: 30px;
+            padding: 60px 40px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(239, 95, 52, 0.3);
+        }
+
+        .cta-box h2 {
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .modern-footer { background: #120e36 !important; color: rgba(255, 255, 255, 0.8); }
+        .footer-heading { color: white; font-weight: 700; }
+        .footer-links a, .footer-links li, .footer-desc, .footer-col p { color: rgba(255, 255, 255, 0.7) !important; }
+        .footer-links a:hover { color: #EF5F34 !important; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+    <div class="container-fluid navbar-container">
+        <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo" id="charitioLogo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto center-buttons">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="founders.html">Founders & Office Bearers</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link active" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-type.html">Member Type</a></li>
+                <li class="nav-item"><a class="nav-link" href="member-data.html">Member Data</a></li>
+            </ul>
+            <div class="right-buttons d-flex gap-3 align-items-center">
+                <a href="login.html" class="login-btn">Log in</a>
+                <a href="signup.html" class="signup-btn">Sign up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="scholarship-hero">
+    <div class="container" data-aos="fade-up">
+        <h1 class="display-3 fw-bold mb-3">Scholarships</h1>
+        <div style="width: 80px; height: 4px; background: #EF5F34; margin: 0 auto 30px;"></div>
+        <p class="lead mx-auto" style="max-width: 700px; opacity: 0.9;">Investing in future leaders by providing financial assistance and merit-based recognition to talented students.</p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="py-5 mt-5">
+    <div class="container py-4">
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="scholar-card">
+                    <div class="scholar-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" alt="Interest-Free Loan">
+                        <span class="scholar-badge">Available</span>
+                    </div>
+                    <div class="scholar-content">
+                        <h3 class="scholar-title">Interest-Free Loan</h3>
+                        <p class="scholar-desc">Supporting students with zero-interest loans to cover tuition and study materials, ensuring no dreams are left behind due to cost.</p>
+                        <div class="scholar-capsules">
+                            <span class="cap cap-green">Eligible</span>
+                            <span class="cap cap-orange">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="scholar-card border-orange" style="border-color: rgba(239, 95, 52, 0.2);">
+                    <div class="scholar-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Merit Scholarship">
+                        <span class="scholar-badge">Merit</span>
+                    </div>
+                    <div class="scholar-content">
+                        <h3 class="scholar-title">Merit Scholarship</h3>
+                        <p class="scholar-desc">Reward academic excellence. This scholarship is awarded to top-performing students based on their previous academic results.</p>
+                        <div class="scholar-capsules">
+                            <span class="cap cap-green">Eligible</span>
+                            <span class="cap cap-orange">Yearly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="scholar-card">
+                    <div class="scholar-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="Need-Based Support">
+                        <span class="scholar-badge">Grant</span>
+                    </div>
+                    <div class="scholar-content">
+                        <h3 class="scholar-title">Need-Based Support</h3>
+                        <p class="scholar-desc">Providing specialized grants for students from economically challenged backgrounds to ensure equal access to education.</p>
+                        <div class="scholar-capsules">
+                            <span class="cap cap-green">Eligible</span>
+                            <span class="cap cap-orange">Urgent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section py-5 my-5">
+    <div class="container py-5">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold" style="font-size: 2.5rem; color: #120e36;">How It Works</h2>
+            <div style="width: 60px; height: 4px; background: #EF5F34; margin: 1rem auto;"></div>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Apply</h4>
+                    <p class="text-secondary small">Submit your application with required docs.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Review</h4>
+                    <p class="text-secondary small">Our committee reviews your eligibility.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Verify</h4>
+                    <p class="text-secondary small">Document verification and interviews.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Approval</h4>
+                    <p class="text-secondary small">Quick disbursement of scholarship funds.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<div class="container mb-5 pb-5">
+    <div class="cta-box" data-aos="fade-up">
+        <h2>Ready to Apply?</h2>
+        <p class="mb-4 fs-5 opacity-75">Take the first step towards your bright future today.</p>
+        <a href="signup.html" class="btn signup-btn py-3 px-5 shadow-lg border-0 bg-white" style="color: #EF5F34 !important; font-weight: 800;">Start Your Application</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="modern-footer">
+    <div class="container footer-upper-container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
+                <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
+                <p class="footer-desc">Welcome to Malegoan Education Society. Empowering the community through knowledge, dedication, and impactful initiatives since 1943.</p>
+                <div class="social-buttons d-flex gap-2">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-google-plus-g"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links list-unstyled mt-3">
+                    <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="projects.html" class="text-decoration-none">Impact</a></li>
+                    <li class="mb-2"><a href="founders.html" class="text-decoration-none">Leadership</a></li>
+                    <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="footer-heading">Contact Info</h3>
+                <div class="d-flex gap-3 mb-3 mt-3">
+                    <i class="fas fa-envelope mt-1 text-orange"></i>
+                    <span class="small">TheEducationSocietyofMalegoan@gmail.com</span>
+                </div>
+                <div class="d-flex gap-3 mb-3">
+                    <i class="fas fa-phone-alt text-orange"></i>
+                    <span class="small">+888 (123) 869523</span>
+                </div>
+                <div class="d-flex gap-3">
+                    <i class="fas fa-map-marker-alt text-orange"></i>
+                    <span class="small">Malegaon, Maharashtra, India</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p class="small opacity-75 mt-3">Subscribe to get updates on new scholarship programs.</p>
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control bg-transparent border-secondary text-white small" placeholder="Your email">
+                    <button class="btn btn-orange text-white" type="button">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-lower-container py-3" style="background: rgba(0,0,0,0.2);">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <p class="mb-0 small" style="color: rgba(255,255,255,0.5);">© 2026 Malegaon Education Society. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
