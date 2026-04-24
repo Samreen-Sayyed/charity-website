@@ -82,17 +82,39 @@
         }
 
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         @keyframes colorGlow {
-            0% { filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8)); }
-            25% { filter: drop-shadow(0 0 12px rgba(255, 153, 102, 0.8)); }
-            50% { filter: drop-shadow(0 0 12px rgba(0, 201, 255, 0.8)); }
-            75% { filter: drop-shadow(0 0 12px rgba(146, 254, 157, 0.8)); }
-            100% { filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8)); }
+            0% {
+                filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8));
+            }
+
+            25% {
+                filter: drop-shadow(0 0 12px rgba(255, 153, 102, 0.8));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 12px rgba(0, 201, 255, 0.8));
+            }
+
+            75% {
+                filter: drop-shadow(0 0 12px rgba(146, 254, 157, 0.8));
+            }
+
+            100% {
+                filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8));
+            }
         }
     </style>
     <section
@@ -400,9 +422,17 @@
             }
 
             @keyframes badgeFloat {
-                0% { transform: translateY(0); }
-                50% { transform: translateY(-8px); }
-                100% { transform: translateY(0); }
+                0% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-8px);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
             }
 
             .rm-img-badge {
