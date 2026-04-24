@@ -22,7 +22,7 @@ const animateCounters = () => {
 };
 
 let countersStarted = false;
-window.addEventListener('scroll', () => {
+const checkCounters = () => {
     const statsSection = document.querySelector('.stats-container');
     if (!statsSection || countersStarted) return;
     const rect = statsSection.getBoundingClientRect();
@@ -30,7 +30,9 @@ window.addEventListener('scroll', () => {
         animateCounters();
         countersStarted = true;
     }
-});
+};
+window.addEventListener('scroll', checkCounters);
+window.addEventListener('load', checkCounters);
 
 // ─── 3D Tilt Effect ──────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
