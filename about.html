@@ -1,710 +1,1089 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Malegaon Education Society</title>
-    <meta name="description" content="Learn the story, mission, vision and work of Malegaon Education Society — serving the community since 1943.">
+    <meta name="description"
+        content="Learn the story, mission, vision and work of Malegaon Education Society — serving the community since 1943.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top modern-navbar">
-    <div class="container-fluid navbar-container">
-        <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo" id="charitioLogo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav mx-auto center-buttons">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="founders.html">Founders &amp; Office Bearers</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
-                <li class="nav-item"><a class="nav-link" href="member-type.html">Member Type</a></li>
-                <li class="nav-item"><a class="nav-link" href="member-data.html">Member Data</a></li>
-            </ul>
-            <div class="right-buttons d-flex gap-3 align-items-center">
-                <a href="login.html" class="login-btn">Log in</a>
-                <a href="signup.html" class="signup-btn">Sign up</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top modern-navbar">
+        <div class="container-fluid navbar-container">
+            <a class="navbar-brand" href="index.html"><img src="images/MSELogo.jpeg" alt="MSE Logo"
+                    id="charitioLogo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto center-buttons">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="founders.html">Founders &amp; Office Bearers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                    <li class="nav-item"><a class="nav-link" href="member-type.html">Member Type</a></li>
+                    <li class="nav-item"><a class="nav-link" href="member-data.html">Member Data</a></li>
+                </ul>
+                <div class="right-buttons d-flex gap-3 align-items-center">
+                    <a href="login.html" class="login-btn">Log in</a>
+                    <a href="signup.html" class="signup-btn">Sign up</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════
      SECTION 1: HERO (firstSectionAbout.jsx)
      Badge "Discover Our Mission" | h1 "Empowering the Future" | subtitle | scroll mouse
 ═══════════════════════════════════════════ -->
-<section class="about-hero position-relative overflow-hidden d-flex align-items-center justify-content-center text-white text-center"
-         style="min-height:100vh; background:linear-gradient(135deg,#120e36 0%,#1a1a4e 50%,#EF5F34 100%);">
-    <div class="position-absolute top-0 start-0 w-100 h-100" style="background:rgba(18,14,54,.7);"></div>
-    <div class="container position-relative" style="z-index:2; padding-top:120px;">
-        <div data-aos="fade-down">
-            <div class="hero-badge d-inline-block rounded-pill px-4 py-2 mb-4 fw-bold" style="background:rgba(239,95,52,.2);color:#EF5F34;border:1px solid rgba(239,95,52,.4);">
+    <style>
+        .hero-bg-anim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            animation: kenBurns 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.15);
+            }
+        }
+
+        .multicolor-glow-text {
+            background: linear-gradient(270deg, #ff5e62, #ff9966, #00C9FF, #92FE9D, #EF5F34);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: gradientShift 6s ease infinite, colorGlow 6s ease infinite;
+            font-weight: 500;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes colorGlow {
+            0% { filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8)); }
+            25% { filter: drop-shadow(0 0 12px rgba(255, 153, 102, 0.8)); }
+            50% { filter: drop-shadow(0 0 12px rgba(0, 201, 255, 0.8)); }
+            75% { filter: drop-shadow(0 0 12px rgba(146, 254, 157, 0.8)); }
+            100% { filter: drop-shadow(0 0 12px rgba(255, 94, 98, 0.8)); }
+        }
+    </style>
+    <section
+        class="about-hero position-relative overflow-hidden d-flex align-items-center justify-content-center text-white text-center"
+        style="min-height:100vh; background-color:#120e36;">
+
+        <!-- Animated Background Image -->
+        <div class="hero-bg-anim"></div>
+
+        <!-- Dark Gradient Overlay -->
+        <div class="position-absolute top-0 start-0 w-100 h-100"
+            style="background:linear-gradient(to bottom, rgba(18,14,54,.8) 0%, rgba(18,14,54,.6) 100%); z-index:1;">
+        </div>
+
+        <div class="container position-relative" style="z-index:2; padding-top:120px;">
+
+            <div class="hero-badge d-inline-block rounded-pill px-4 py-2 mb-4 fw-bold"
+                style="background:rgba(239,95,52,.2);color:#EF5F34;border:1px solid rgba(239,95,52,.4); backdrop-filter: blur(4px);"
+                data-aos="fade-down" data-aos-duration="1000">
                 Discover Our Mission
             </div>
-        </div>
-        <h1 class="display-3 fw-bold mb-4" data-aos="fade-up" data-aos-delay="100">
-            Empowering the <span class="text-orange">Future</span>
-        </h1>
-        <p class="lead text-white-50 mx-auto mb-5" style="max-width:600px;" data-aos="fade-up" data-aos-delay="200">
-            Empowering students through education, opportunity, and community support.
-        </p>
-        <div class="scroll-indicator mt-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="mouse-icon mx-auto"></div>
-        </div>
-    </div>
-</section>
 
-<!-- ═══════════════════════════════════════════
+            <h1 class="display-3 fw-bold mb-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                Empowering the <span class="text-orange" style="color: #EF5F34;">Future</span>
+            </h1>
+
+            <p class="lead mx-auto mb-5 multicolor-glow-text" style="max-width:600px; font-size:1.4rem;"
+                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                Empowering students through education, opportunity, and community support.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
      SECTION 2: OUR STORY (secondSectionAbout.jsx)
      img left | "Since 1943" badge | story paragraphs right
 ═══════════════════════════════════════════ -->
-<section class="about-story py-5">
-    <div class="container py-5">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6" data-aos="fade-right">
-                <div class="position-relative d-inline-block w-100">
-                    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=900&auto=format&fit=crop"
-                         alt="Our Story" class="img-fluid rounded-4 shadow-lg">
-                    <div class="floating-year-badge">
-                        <span class="year-text">Since 1943</span>
+    <section class="about-story py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="position-relative d-inline-block w-100">
+
+                        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=900&auto=format&fit=crop"
+                            alt="Our Story" class="img-fluid rounded-4 shadow-lg">
+
+                        <!-- UPDATED ORANGE CAPSULE -->
+                        <div style="
+                        position:absolute;
+                        bottom:-20px;
+                        left:20px;
+                        background:#EF5F34;
+                        color:#fff;
+                        padding:12px 28px;
+                        border-radius:30px;
+                        font-weight:700;
+                        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+                    ">
+                            Since 1943
+                        </div>
+
+                        <div class="image-accent"
+                            style="position:absolute;width:100%;height:100%;top:12px;left:12px;border:3px solid #EF5F34;border-radius:1rem;z-index:-1;">
+                        </div>
                     </div>
-                    <div class="image-accent" style="position:absolute;width:100%;height:100%;top:12px;left:12px;border:3px solid #EF5F34;border-radius:1rem;z-index:-1;"></div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3" style="font-size:2.2rem;">Our Story</h2>
+                    <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin-bottom:1.5rem;"></div>
+
+                    <p class="fs-5 fw-medium mb-3">
+                        Mumbai, often called the city of dreams, attracts millions striving for a better future.
+                    </p>
+
+                    <p class="text-secondary mb-3">
+                        In 1943, a group of young professionals from Malegaon came together to support students facing
+                        hardships in education and employment. Since then, the Malegaon Society of Education has
+                        empowered thousands through scholarships, schools, and community initiatives.
+                    </p>
+
+                    <p class="text-secondary">
+                        Our commitment is to create a society where opportunities are accessible to all, irrespective of
+                        their background.
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <h2 class="fw-bold mb-3" style="font-size:2.2rem;">Our Story</h2>
-                <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin-bottom:1.5rem;"></div>
-                <p class="fs-5 fw-medium mb-3">Mumbai, often called the city of dreams, attracts millions striving for a better future.</p>
-                <p class="text-secondary mb-3">In 1943, a group of young professionals from Malegaon came together to support students facing hardships in education and employment. Since then, the Malegaon Society of Education has empowered thousands through scholarships, schools, and community initiatives.</p>
-                <p class="text-secondary">Our commitment is to create a society where opportunities are accessible to all, irrespective of their background.</p>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════
      SECTION 3: SCROLL-DRIVEN ROADMAP TIMELINE
 ═══════════════════════════════════════════ -->
-<section class="scroll-roadmap-section" id="roadmapSection">
-<style>
-.scroll-roadmap-section {
-    padding: 100px 0;
-    position: relative;
-    background: #fff;
-    overflow: hidden;
-}
-.scroll-roadmap-section::before,
-.scroll-roadmap-section::after {
-    content:'';position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;
-}
-.scroll-roadmap-section::before{width:600px;height:600px;background:rgba(239,95,52,.07);top:-120px;left:-100px;}
-.scroll-roadmap-section::after {width:500px;height:500px;background:rgba(18,14,54,.05);bottom:-80px;right:-80px;}
-
-/* ───────── SVG OVERLAY ───────── */
-#roadmapSvg {
-    position:absolute;
-    top:0;left:0;
-    width:100%;
-    pointer-events:none;
-    z-index:2;
-    overflow:visible;
-}
-.rm-bg-path {
-    fill:none;
-    stroke: rgba(239,95,52,.12);
-    stroke-width:5;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-.rm-fg-path {
-    fill:none;
-    stroke:url(#roadGradient);
-    stroke-width:5;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    filter:drop-shadow(0 0 6px rgba(239,95,52,.45));
-    transition: stroke-dashoffset 0.05s linear;
-}
-
-/* ───────── TIMELINE CONTAINER ───────── */
-#roadmapTrack {
-    position:relative;
-    z-index:3;
-    max-width:1100px;
-    margin:0 auto;
-}
-
-/* ───────── EACH MILESTONE ROW ───────── */
-.rm-step {
-    display:grid;
-    grid-template-columns: 1fr 120px 1fr;
-    align-items:center;
-    margin-bottom: 80px;
-    position:relative;
-}
-
-/* ───────── NODE (DOT) ───────── */
-.rm-node {
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    z-index:10;position:relative;
-}
-.rm-dot {
-    width:32px;height:32px;border-radius:50%;
-    background:#fff;
-    border:5px solid #EF5F34;
-    box-shadow: 0 0 20px rgba(239, 95, 52, 0.4);
-    display:flex;align-items:center;justify-content:center;
-    transition: all .4s ease;
-    position:relative;z-index:2;
-}
-.rm-dot::before {
-    content:''; position:absolute; inset:-12px; border-radius:50%;
-    background:rgba(239, 95, 52, 0.1);
-    opacity:0; transition: opacity 0.4s ease;
-}
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(239, 95, 52, 0.6); }
-    70% { box-shadow: 0 0 0 20px rgba(239, 95, 52, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(239, 95, 52, 0); }
-}
-
-.rm-dot.dot-active {
-    transform: scale(1.4);
-    background: #fff;
-    border-width: 6px;
-    border-color: #EF5F34;
-    box-shadow: 0 0 30px rgba(239, 95, 52, 0.5);
-    animation: pulseGlow 2s infinite;
-}
-.rm-dot.dot-active::before { opacity:1; }
-
-/* ───────── MILESTONE CARD ───────── */
-.rm-card-content {
-    background:#fff;
-    border-radius:30px;
-    padding:40px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.04);
-    border:1px solid rgba(0,0,0,0.02);
-    opacity:0;
-    transition: all .8s cubic-bezier(.2,.8,.2,1);
-}
-.rm-step.step-left .rm-card-content { transform:translateX(50px); }
-.rm-step.step-right .rm-card-content { transform:translateX(-50px); }
-
-.rm-card-content.card-active {
-    opacity:1; transform:translateX(0);
-}
-
-.rm-card-img {
-    height:300px; width:100%; border-radius:30px;
-    overflow:hidden; position:relative;
-    box-shadow:0 15px 45px rgba(0,0,0,0.08);
-    opacity:0;
-    transition: all .8s cubic-bezier(.2,.8,.2,1);
-}
-.rm-step.step-left .rm-card-img { transform:translateX(-50px); }
-.rm-step.step-right .rm-card-img { transform:translateX(50px); }
-
-.rm-card-img.card-active {
-    opacity:1; transform:translateX(0);
-}
-
-.rm-card-img img { width:100%; height:100%; object-fit:cover; }
-
-.rm-img-badge {
-    position:absolute; bottom:25px; right:25px;
-    background:#fff; color:#EF5F34;
-    padding:8px 25px; border-radius:30px;
-    font-weight:900; font-size:1.4rem;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-
-.rm-btn-outline {
-    display:inline-block; margin-top:20px;
-    padding:10px 30px; border:2px solid #EF5F34;
-    color:#EF5F34; font-weight:700; border-radius:50px;
-    text-decoration:none; transition:all 0.3s ease;
-}
-.rm-btn-outline:hover { background:#EF5F34; color:#fff; }
-
-.rm-card-title { font-size:1.8rem; font-weight:800; color:#120e36; margin-bottom:15px; }
-.rm-card-desc { font-size:1rem; color:#666; line-height:1.7; margin:0; }
-
-/* RIGHT card slides from right */
-.rm-step.step-right .rm-card { --slide-x: 40px; }
-
-/* Empty placeholder (other side of card) */
-.rm-empty { /* nothing */ }
-
-/* ───────── RESPONSIVE ───────── */
-@media (max-width:992px) {
-    .rm-step { grid-template-columns: 80px 1fr; margin-bottom: 50px; }
-    .rm-step.step-right { direction: rtl; }
-    .rm-step.step-right .rm-side { direction: ltr; }
-    .rm-card-img { height: 200px; }
-    .rm-card-title { font-size: 1.4rem; }
-    #roadmapSvg { display:none; }
-}
-</style>
-
-<div class="container">
-    <!-- HEADER -->
-    <div class="text-center mb-5 pb-3" data-aos="fade-up">
-        <span class="d-inline-block px-4 py-2 rounded-pill fw-bold mb-3"
-              style="background:rgba(239,95,52,.1);color:#EF5F34;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;">
-            Our Roadmap
-        </span>
-        <h2 class="fw-bold" style="font-size:2.4rem;">Our Journey Through Time</h2>
-        <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:1rem auto;"></div>
-        <p class="text-secondary" style="max-width:500px;margin:auto;">Eight decades of dedication — scroll to trace the road that shaped us.</p>
-    </div>
-
-    <!-- SVG OVERLAY (path drawn by JS) -->
-    <svg id="roadmapSvg" aria-hidden="true">
-        <defs>
-            <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%"   stop-color="#ff9b7d"/>
-                <stop offset="50%"  stop-color="#EF5F34"/>
-                <stop offset="100%" stop-color="#d94e25"/>
-            </linearGradient>
-        </defs>
-        <path class="rm-bg-path" id="rmBgPath"/>
-        <path class="rm-fg-path" id="rmFgPath"/>
-    </svg>
-
-    <!-- MILESTONE ROWS -->
-    <div id="roadmapTrack">
-
-        <!-- STEP 1: 1943 - Left: Image, Right: Text -->
-        <div class="rm-step step-left">
-            <div class="rm-side">
-                <div class="rm-card-img" id="rmImg0">
-                    <img src="images/ninthSection-pic1.jpg" alt="Foundation">
-                    <div class="rm-img-badge">1943</div>
-                </div>
-            </div>
-            <div class="rm-node"><div class="rm-dot" id="rmDot0"></div></div>
-            <div class="rm-side">
-                <div class="rm-card-content" id="rmContent0">
-                    <h3 class="rm-card-title">Society Founded</h3>
-                    <p class="rm-card-desc">Established by dedicated volunteers in Malegaon with a mission to uplift the community through accessible education and training.</p>
-                    <a href="#" class="rm-btn-outline">Discover More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- STEP 2: 1953 - Right: Image, Left: Text -->
-        <div class="rm-step step-right">
-            <div class="rm-side">
-                <div class="rm-card-content" id="rmContent1">
-                    <h3 class="rm-card-title">Officially Registered</h3>
-                    <p class="rm-card-desc">Achieved formal recognition as a registered society, paving the way for structured expansion and long-term institutional growth.</p>
-                    <a href="#" class="rm-btn-outline">Discover More</a>
-                </div>
-            </div>
-            <div class="rm-node"><div class="rm-dot" id="rmDot1"></div></div>
-            <div class="rm-side">
-                <div class="rm-card-img" id="rmImg1">
-                    <img src="images/ninthSection-pic2.jpg" alt="Registration">
-                    <div class="rm-img-badge">1953</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- STEP 3: 2013 - Left: Image, Right: Text -->
-        <div class="rm-step step-left">
-            <div class="rm-side">
-                <div class="rm-card-img" id="rmImg2">
-                    <img src="images/pic1-eightSection.jpg" alt="School">
-                    <div class="rm-img-badge">2013</div>
-                </div>
-            </div>
-            <div class="rm-node"><div class="rm-dot" id="rmDot2"></div></div>
-            <div class="rm-side">
-                <div class="rm-card-content" id="rmContent2">
-                    <h3 class="rm-card-title">School Established</h3>
-                    <p class="rm-card-desc">Opened our primary Urdu Medium School, bringing modern infrastructure and quality learning to hundreds of deserving students.</p>
-                    <a href="#" class="rm-btn-outline">Discover More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- STEP 4: 2019 - Right: Image, Left: Text -->
-        <div class="rm-step step-right">
-            <div class="rm-side">
-                <div class="rm-card-content" id="rmContent3">
-                    <h3 class="rm-card-title">Campus Construction</h3>
-                    <p class="rm-card-desc">Began work on our dedicated 10,000 sq. ft. campus, featuring purpose-built classrooms, science labs, and community spaces.</p>
-                    <a href="#" class="rm-btn-outline">Discover More</a>
-                </div>
-            </div>
-            <div class="rm-node"><div class="rm-dot" id="rmDot3"></div></div>
-            <div class="rm-side">
-                <div class="rm-card-img" id="rmImg3">
-                    <img src="images/pic3-eightSection.jpg" alt="Construction">
-                    <div class="rm-img-badge">2019</div>
-                </div>
-            </div>
-        </div>
-
-    </div><!-- /roadmapTrack -->
-</div><!-- /container -->
-
-<script>
-(function() {
-    /* ── Wait for full layout ── */
-    function init() {
-        const section  = document.getElementById('roadmapSection');
-        const track    = document.getElementById('roadmapTrack');
-        const svg      = document.getElementById('roadmapSvg');
-        const bgPath   = document.getElementById('rmBgPath');
-        const fgPath   = document.getElementById('rmFgPath');
-        const dots     = [...document.querySelectorAll('.rm-dot')];
-        const imgs     = [...document.querySelectorAll('.rm-card-img')];
-        const contents = [...document.querySelectorAll('.rm-card-content')];
-        if (!section || !svg || !dots.length) return;
-
-        let pathLen = 0;
-        let nodeRatios = []; /* 0-1: how far along path each node sits */
-
-        /* ── Absolute offsetTop within track ── */
-        function absOffsetTop(el, ancestor) {
-            let top = 0;
-            while (el && el !== ancestor) { top += el.offsetTop; el = el.offsetParent; }
-            return top;
-        }
-        function absOffsetLeft(el, ancestor) {
-            let left = 0;
-            while (el && el !== ancestor) { left += el.offsetLeft; el = el.offsetParent; }
-            return left;
-        }
-
-        /* ── Build SVG path through dot centres ── */
-        function buildPath() {
-            const sRect = section.getBoundingClientRect();
-            const tRect = track.getBoundingClientRect();
-            const W = section.offsetWidth;
-            const H = section.scrollHeight;
-
-            svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-            svg.style.height = H + 'px';
-
-            /* Dot positions relative to section top */
-            const pts = dots.map(dot => {
-                const dRect = dot.getBoundingClientRect();
-                return {
-                    x: dRect.left + dRect.width  / 2 - sRect.left,
-                    y: dRect.top  + dRect.height / 2 - sRect.top + window.scrollY - (sRect.top + window.scrollY - sRect.top)
-                };
-            });
-
-            /* Recalc using offsetTop relative to section */
-            const pts2 = dots.map(dot => {
-                const dRect  = dot.getBoundingClientRect();
-                const sTop   = section.getBoundingClientRect().top;
-                const sLeft  = section.getBoundingClientRect().left;
-                return {
-                    x: dRect.left + dRect.width  / 2 - sLeft,
-                    y: dRect.top  + dRect.height / 2 - sTop
-                };
-            });
-
-            if (pts2.length < 2) return;
-
-            /* Smooth cubic Bézier snake path */
-            let d = `M ${pts2[0].x.toFixed(1)} ${pts2[0].y.toFixed(1)}`;
-            for (let i = 1; i < pts2.length; i++) {
-                const cur  = pts2[i];
-                const prev = pts2[i - 1];
-                const midY = (prev.y + cur.y) / 2;
-                
-                // Offset control points to create wave
-                const waveOffset = 60; // How 'wavy' it is
-                const dir = (i % 2 === 0) ? 1 : -1;
-                
-                const cp1x = prev.x + (waveOffset * dir);
-                const cp2x = cur.x + (waveOffset * dir);
-                
-                d += ` C ${cp1x.toFixed(1)} ${midY.toFixed(1)}, ${cp2x.toFixed(1)} ${midY.toFixed(1)}, ${cur.x.toFixed(1)} ${cur.y.toFixed(1)}`;
+    <section class="scroll-roadmap-section" id="roadmapSection">
+        <style>
+            .scroll-roadmap-section {
+                padding: 100px 0;
+                position: relative;
+                background: #fff;
+                overflow: hidden;
             }
 
-            bgPath.setAttribute('d', d);
-            fgPath.setAttribute('d', d);
+            .scroll-roadmap-section::before,
+            .scroll-roadmap-section::after {
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(100px);
+                pointer-events: none;
+            }
 
-            pathLen = fgPath.getTotalLength();
-            fgPath.style.strokeDasharray  = pathLen;
-            fgPath.style.strokeDashoffset = pathLen; /* fully hidden */
+            .scroll-roadmap-section::before {
+                width: 600px;
+                height: 600px;
+                background: rgba(239, 95, 52, .07);
+                top: -120px;
+                left: -100px;
+            }
 
-            /* Find path-length ratio for each node */
-            nodeRatios = pts2.map((pt, i) => {
-                if (i === 0) return 0;
-                /* Binary-search for the point on the path closest in Y */
-                let lo = 0, hi = pathLen;
-                for (let iter = 0; iter < 40; iter++) {
-                    const mid = (lo + hi) / 2;
-                    const p = fgPath.getPointAtLength(mid);
-                    if (p.y < pt.y) lo = mid; else hi = mid;
-                    if (hi - lo < 0.5) break;
+            .scroll-roadmap-section::after {
+                width: 500px;
+                height: 500px;
+                background: rgba(18, 14, 54, .05);
+                bottom: -80px;
+                right: -80px;
+            }
+
+            /* ───────── SVG OVERLAY ───────── */
+            #roadmapSvg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                pointer-events: none;
+                z-index: 2;
+                overflow: visible;
+            }
+
+            .rm-bg-path {
+                fill: none;
+                stroke: rgba(239, 95, 52, .12);
+                stroke-width: 5;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            .rm-fg-path {
+                fill: none;
+                stroke: url(#roadGradient);
+                stroke-width: 5;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                filter: drop-shadow(0 0 6px rgba(239, 95, 52, .45));
+                transition: stroke-dashoffset 0.05s linear;
+            }
+
+            /* ───────── TIMELINE CONTAINER ───────── */
+            #roadmapTrack {
+                position: relative;
+                z-index: 3;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            /* ───────── EACH MILESTONE ROW ───────── */
+            .rm-step {
+                display: grid;
+                grid-template-columns: 1fr 120px 1fr;
+                align-items: center;
+                margin-bottom: 80px;
+                position: relative;
+            }
+
+            /* ───────── NODE (DOT) ───────── */
+            .rm-node {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                position: relative;
+            }
+
+            .rm-dot {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: #fff;
+                border: 5px solid #EF5F34;
+                box-shadow: 0 0 20px rgba(239, 95, 52, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all .4s ease;
+                position: relative;
+                z-index: 2;
+            }
+
+            .rm-dot::before {
+                content: '';
+                position: absolute;
+                inset: -12px;
+                border-radius: 50%;
+                background: rgba(239, 95, 52, 0.1);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+
+            @keyframes pulseGlow {
+                0% {
+                    box-shadow: 0 0 0 0 rgba(239, 95, 52, 0.6);
                 }
-                return ((lo + hi) / 2) / pathLen;
-            });
-        }
 
-        /* ── Scroll handler ── */
-        function onScroll() {
-            const rect = section.getBoundingClientRect();
-            const winH = window.innerHeight;
-            
-            // Start when top is near middle, end when bottom is near middle
-            const viewStart = winH * 0.7;
-            const viewEnd   = winH * 0.3;
-            
-            const totalAnimDist = rect.height;
-            let currentPos = viewStart - rect.top;
-            let progress = Math.max(0, Math.min(1, currentPos / totalAnimDist));
+                70% {
+                    box-shadow: 0 0 0 20px rgba(239, 95, 52, 0);
+                }
 
-            fgPath.style.strokeDashoffset = pathLen * (1 - progress);
+                100% {
+                    box-shadow: 0 0 0 0 rgba(239, 95, 52, 0);
+                }
+            }
 
-            /* Activate nodes & elements */
-            nodeRatios.forEach((ratio, i) => {
-                if (progress >= ratio - 0.01) {
-                    dots[i] && dots[i].classList.add('dot-active');
+            .rm-dot.dot-active {
+                transform: scale(1.4);
+                background: #fff;
+                border-width: 6px;
+                border-color: #EF5F34;
+                box-shadow: 0 0 30px rgba(239, 95, 52, 0.5);
+                animation: pulseGlow 2s infinite;
+            }
+
+            .rm-dot.dot-active::before {
+                opacity: 1;
+            }
+
+            /* ───────── MILESTONE CARD ───────── */
+            .rm-card-content {
+                background: #fff;
+                border-radius: 30px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+                border: 1px solid rgba(0, 0, 0, 0.02);
+                opacity: 0;
+                transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            }
+
+            .rm-step.step-left .rm-card-content {
+                transform: translateX(50px);
+            }
+
+            .rm-step.step-right .rm-card-content {
+                transform: translateX(-50px);
+            }
+
+            .rm-card-content.card-active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .rm-card-content.card-active:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(239, 95, 52, 0.15);
+                border-color: rgba(239, 95, 52, 0.3);
+            }
+
+            .rm-card-img {
+                height: 300px;
+                width: 100%;
+                border-radius: 30px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+                opacity: 0;
+                transition: opacity .8s cubic-bezier(.2, .8, .2, 1), transform .8s cubic-bezier(.2, .8, .2, 1), box-shadow 0.3s ease;
+            }
+
+            .rm-step.step-left .rm-card-img {
+                transform: translateX(-50px);
+            }
+
+            .rm-step.step-right .rm-card-img {
+                transform: translateX(50px);
+            }
+
+            .rm-card-img.card-active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .rm-card-img.card-active:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px rgba(239, 95, 52, 0.25);
+            }
+
+            .rm-card-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s cubic-bezier(.2, .8, .2, 1);
+            }
+
+            .rm-card-img.card-active:hover img {
+                transform: scale(1.08);
+            }
+
+            @keyframes badgeFloat {
+                0% { transform: translateY(0); }
+                50% { transform: translateY(-8px); }
+                100% { transform: translateY(0); }
+            }
+
+            .rm-img-badge {
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+                background: #fff;
+                color: #EF5F34;
+                padding: 8px 25px;
+                border-radius: 30px;
+                font-weight: 900;
+                font-size: 1.4rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                animation: badgeFloat 3s ease-in-out infinite;
+            }
+
+            .rm-btn-outline {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 30px;
+                border: 2px solid #EF5F34;
+                color: #EF5F34;
+                font-weight: 700;
+                border-radius: 50px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .rm-btn-outline:hover {
+                background: #EF5F34;
+                color: #fff;
+            }
+
+            .rm-card-title {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: #120e36;
+                margin-bottom: 15px;
+            }
+
+            .rm-card-desc {
+                font-size: 1rem;
+                color: #666;
+                line-height: 1.7;
+                margin: 0;
+            }
+
+            /* RIGHT card slides from right */
+            .rm-step.step-right .rm-card {
+                --slide-x: 40px;
+            }
+
+            /* Empty placeholder (other side of card) */
+            .rm-empty {
+                /* nothing */
+            }
+
+            /* ───────── RESPONSIVE ───────── */
+            @media (max-width:992px) {
+                .rm-step {
+                    grid-template-columns: 80px 1fr;
+                    margin-bottom: 50px;
+                }
+
+                .rm-step.step-right {
+                    direction: rtl;
+                }
+
+                .rm-step.step-right .rm-side {
+                    direction: ltr;
+                }
+
+                .rm-card-img {
+                    height: 200px;
+                }
+
+                .rm-card-title {
+                    font-size: 1.4rem;
+                }
+
+                #roadmapSvg {
+                    display: none;
+                }
+            }
+        </style>
+
+        <div class="container">
+            <!-- HEADER -->
+            <div class="text-center mb-5 pb-3" data-aos="fade-up">
+                <span class="d-inline-block px-4 py-2 rounded-pill fw-bold mb-3"
+                    style="background:rgba(239,95,52,.1);color:#EF5F34;font-size:.8rem;letter-spacing:1.5px;text-transform:uppercase;">
+                    Our Roadmap
+                </span>
+                <h2 class="fw-bold" style="font-size:2.4rem;">Our Journey Through Time</h2>
+                <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:1rem auto;"></div>
+                <p class="text-secondary" style="max-width:500px;margin:auto;">Eight decades of dedication — scroll to
+                    trace the road that shaped us.</p>
+            </div>
+
+            <!-- SVG OVERLAY (path drawn by JS) -->
+            <svg id="roadmapSvg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#ff9b7d" />
+                        <stop offset="50%" stop-color="#EF5F34" />
+                        <stop offset="100%" stop-color="#d94e25" />
+                    </linearGradient>
+                </defs>
+                <path class="rm-bg-path" id="rmBgPath" />
+                <path class="rm-fg-path" id="rmFgPath" />
+            </svg>
+
+            <!-- MILESTONE ROWS -->
+            <div id="roadmapTrack">
+
+                <!-- STEP 1: 1943 - Left: Image, Right: Text -->
+                <div class="rm-step step-left">
+                    <div class="rm-side">
+                        <div class="rm-card-img" id="rmImg0">
+                            <img src="images/ninthSection-pic1.jpg" alt="Foundation">
+                            <div class="rm-img-badge">1943</div>
+                        </div>
+                    </div>
+                    <div class="rm-node">
+                        <div class="rm-dot" id="rmDot0"></div>
+                    </div>
+                    <div class="rm-side">
+                        <div class="rm-card-content" id="rmContent0">
+                            <h3 class="rm-card-title">Society Founded</h3>
+                            <p class="rm-card-desc">Established by dedicated volunteers in Malegaon with a mission to
+                                uplift the community through accessible education and training.</p>
+                            <a href="#" class="rm-btn-outline">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: 1953 - Right: Image, Left: Text -->
+                <div class="rm-step step-right">
+                    <div class="rm-side">
+                        <div class="rm-card-content" id="rmContent1">
+                            <h3 class="rm-card-title">Officially Registered</h3>
+                            <p class="rm-card-desc">Achieved formal recognition as a registered society, paving the way
+                                for structured expansion and long-term institutional growth.</p>
+                            <a href="#" class="rm-btn-outline">Discover More</a>
+                        </div>
+                    </div>
+                    <div class="rm-node">
+                        <div class="rm-dot" id="rmDot1"></div>
+                    </div>
+                    <div class="rm-side">
+                        <div class="rm-card-img" id="rmImg1">
+                            <img src="images/ninthSection-pic2.jpg" alt="Registration">
+                            <div class="rm-img-badge">1953</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: 2013 - Left: Image, Right: Text -->
+                <div class="rm-step step-left">
+                    <div class="rm-side">
+                        <div class="rm-card-img" id="rmImg2">
+                            <img src="images/pic1-eightSection.jpg" alt="School">
+                            <div class="rm-img-badge">2013</div>
+                        </div>
+                    </div>
+                    <div class="rm-node">
+                        <div class="rm-dot" id="rmDot2"></div>
+                    </div>
+                    <div class="rm-side">
+                        <div class="rm-card-content" id="rmContent2">
+                            <h3 class="rm-card-title">School Established</h3>
+                            <p class="rm-card-desc">Opened our primary Urdu Medium School, bringing modern
+                                infrastructure and quality learning to hundreds of deserving students.</p>
+                            <a href="#" class="rm-btn-outline">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: 2019 - Right: Image, Left: Text -->
+                <div class="rm-step step-right">
+                    <div class="rm-side">
+                        <div class="rm-card-content" id="rmContent3">
+                            <h3 class="rm-card-title">Campus Construction</h3>
+                            <p class="rm-card-desc">Began work on our dedicated 10,000 sq. ft. campus, featuring
+                                purpose-built classrooms, science labs, and community spaces.</p>
+                            <a href="#" class="rm-btn-outline">Discover More</a>
+                        </div>
+                    </div>
+                    <div class="rm-node">
+                        <div class="rm-dot" id="rmDot3"></div>
+                    </div>
+                    <div class="rm-side">
+                        <div class="rm-card-img" id="rmImg3">
+                            <img src="images/pic3-eightSection.jpg" alt="Construction">
+                            <div class="rm-img-badge">2019</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /roadmapTrack -->
+        </div><!-- /container -->
+
+        <script>
+            (function () {
+                /* ── Wait for full layout ── */
+                function init() {
+                    const section = document.getElementById('roadmapSection');
+                    const track = document.getElementById('roadmapTrack');
+                    const svg = document.getElementById('roadmapSvg');
+                    const bgPath = document.getElementById('rmBgPath');
+                    const fgPath = document.getElementById('rmFgPath');
+                    const dots = [...document.querySelectorAll('.rm-dot')];
+                    const imgs = [...document.querySelectorAll('.rm-card-img')];
+                    const contents = [...document.querySelectorAll('.rm-card-content')];
+                    if (!section || !svg || !dots.length) return;
+
+                    let pathLen = 0;
+                    let nodeRatios = []; /* 0-1: how far along path each node sits */
+
+                    /* ── Absolute offsetTop within track ── */
+                    function absOffsetTop(el, ancestor) {
+                        let top = 0;
+                        while (el && el !== ancestor) { top += el.offsetTop; el = el.offsetParent; }
+                        return top;
+                    }
+                    function absOffsetLeft(el, ancestor) {
+                        let left = 0;
+                        while (el && el !== ancestor) { left += el.offsetLeft; el = el.offsetParent; }
+                        return left;
+                    }
+
+                    /* ── Build SVG path through dot centres ── */
+                    function buildPath() {
+                        const sRect = section.getBoundingClientRect();
+                        const tRect = track.getBoundingClientRect();
+                        const W = section.offsetWidth;
+                        const H = section.scrollHeight;
+
+                        svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+                        svg.style.height = H + 'px';
+
+                        /* Dot positions relative to section top */
+                        const pts = dots.map(dot => {
+                            const dRect = dot.getBoundingClientRect();
+                            return {
+                                x: dRect.left + dRect.width / 2 - sRect.left,
+                                y: dRect.top + dRect.height / 2 - sRect.top + window.scrollY - (sRect.top + window.scrollY - sRect.top)
+                            };
+                        });
+
+                        /* Recalc using offsetTop relative to section */
+                        const pts2 = dots.map(dot => {
+                            const dRect = dot.getBoundingClientRect();
+                            const sTop = section.getBoundingClientRect().top;
+                            const sLeft = section.getBoundingClientRect().left;
+                            return {
+                                x: dRect.left + dRect.width / 2 - sLeft,
+                                y: dRect.top + dRect.height / 2 - sTop
+                            };
+                        });
+
+                        if (pts2.length < 2) return;
+
+                        /* Smooth cubic Bézier snake path */
+                        let d = `M ${pts2[0].x.toFixed(1)} ${pts2[0].y.toFixed(1)}`;
+                        for (let i = 1; i < pts2.length; i++) {
+                            const cur = pts2[i];
+                            const prev = pts2[i - 1];
+                            const midY = (prev.y + cur.y) / 2;
+
+                            // Offset control points to create wave
+                            const waveOffset = 60; // How 'wavy' it is
+                            const dir = (i % 2 === 0) ? 1 : -1;
+
+                            const cp1x = prev.x + (waveOffset * dir);
+                            const cp2x = cur.x + (waveOffset * dir);
+
+                            d += ` C ${cp1x.toFixed(1)} ${midY.toFixed(1)}, ${cp2x.toFixed(1)} ${midY.toFixed(1)}, ${cur.x.toFixed(1)} ${cur.y.toFixed(1)}`;
+                        }
+
+                        bgPath.setAttribute('d', d);
+                        fgPath.setAttribute('d', d);
+
+                        pathLen = fgPath.getTotalLength();
+                        fgPath.style.strokeDasharray = pathLen;
+                        fgPath.style.strokeDashoffset = pathLen; /* fully hidden */
+
+                        /* Find path-length ratio for each node */
+                        nodeRatios = pts2.map((pt, i) => {
+                            if (i === 0) return 0;
+                            /* Binary-search for the point on the path closest in Y */
+                            let lo = 0, hi = pathLen;
+                            for (let iter = 0; iter < 40; iter++) {
+                                const mid = (lo + hi) / 2;
+                                const p = fgPath.getPointAtLength(mid);
+                                if (p.y < pt.y) lo = mid; else hi = mid;
+                                if (hi - lo < 0.5) break;
+                            }
+                            return ((lo + hi) / 2) / pathLen;
+                        });
+                    }
+
+                    /* ── Scroll handler ── */
+                    function onScroll() {
+                        const rect = section.getBoundingClientRect();
+                        const winH = window.innerHeight;
+
+                        // Start when top is near middle, end when bottom is near middle
+                        const viewStart = winH * 0.7;
+                        const viewEnd = winH * 0.3;
+
+                        const totalAnimDist = rect.height;
+                        let currentPos = viewStart - rect.top;
+                        let progress = Math.max(0, Math.min(1, currentPos / totalAnimDist));
+
+                        fgPath.style.strokeDashoffset = pathLen * (1 - progress);
+
+                        /* Activate nodes & elements */
+                        nodeRatios.forEach((ratio, i) => {
+                            if (progress >= ratio - 0.01) {
+                                dots[i] && dots[i].classList.add('dot-active');
+                            } else {
+                                dots[i] && dots[i].classList.remove('dot-active');
+                            }
+
+                            if (progress >= ratio - 0.1) {
+                                if (i % 2 === 0) {
+                                    if (imgs[i] && !imgs[i].classList.contains('card-active')) {
+                                        imgs[i].classList.add('card-active');
+                                        setTimeout(() => contents[i] && contents[i].classList.add('card-active'), 300);
+                                    }
+                                } else {
+                                    if (contents[i] && !contents[i].classList.contains('card-active')) {
+                                        contents[i].classList.add('card-active');
+                                        setTimeout(() => imgs[i] && imgs[i].classList.add('card-active'), 300);
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    let ticking = false;
+                    function raf() {
+                        if (!ticking) {
+                            requestAnimationFrame(() => { onScroll(); ticking = false; });
+                            ticking = true;
+                        }
+                    }
+
+                    /* Slight delay so layout is painted */
+                    setTimeout(() => {
+                        buildPath();
+                        onScroll();
+                        window.addEventListener('scroll', raf, { passive: true });
+                        window.addEventListener('resize', () => { buildPath(); onScroll(); });
+                    }, 200);
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
                 } else {
-                    dots[i] && dots[i].classList.remove('dot-active');
+                    init();
                 }
+            })();
+        </script>
+    </section>
 
-                if (progress >= ratio - 0.1) {
-                    imgs[i] && imgs[i].classList.add('card-active');
-                    contents[i] && contents[i].classList.add('card-active');
-                }
-            });
-        }
-
-        let ticking = false;
-        function raf() {
-            if (!ticking) {
-                requestAnimationFrame(() => { onScroll(); ticking = false; });
-                ticking = true;
-            }
-        }
-
-        /* Slight delay so layout is painted */
-        setTimeout(() => {
-            buildPath();
-            onScroll();
-            window.addEventListener('scroll',  raf,   { passive: true });
-            window.addEventListener('resize',  () => { buildPath(); onScroll(); });
-        }, 200);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-})();
-</script>
-</section>
-
-<!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════
      SECTION 4: OUR WORK (fifthSectionAbout.jsx)
      5 work cards with images + modal
 ═══════════════════════════════════════════ -->
-<section class="our-work py-5">
-    <div class="container py-4">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="fw-bold">Our Work</h2>
-            <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:1rem auto;"></div>
-            <p class="text-secondary">Impactful initiatives transforming lives every day</p>
+    <section class="our-work py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our Work</h2>
+                <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:1rem auto;"></div>
+                <p class="text-secondary">Impactful initiatives transforming lives every day</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100"
+                        data-bs-toggle="modal" data-bs-target="#workModal1" style="cursor:pointer">
+                        <div class="position-relative overflow-hidden" style="height:220px">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=700"
+                                class="w-100 h-100" style="object-fit:cover" alt="Urdu School">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3"
+                                style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn
+                                    More</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">Established an Urdu Medium School</h5>
+                            <p class="text-secondary small">A high-standard educational institution established to
+                                nurture the potential of Urdu-medium students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100"
+                        data-bs-toggle="modal" data-bs-target="#workModal2" style="cursor:pointer">
+                        <div class="position-relative overflow-hidden" style="height:220px">
+                            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=700"
+                                class="w-100 h-100" style="object-fit:cover" alt="Book Fair">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3"
+                                style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn
+                                    More</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">National Book Fairs</h5>
+                            <p class="text-secondary small">Organizing national-level Urdu book fairs and literary
+                                events to preserve culture.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100"
+                        data-bs-toggle="modal" data-bs-target="#workModal3" style="cursor:pointer">
+                        <div class="position-relative overflow-hidden" style="height:220px">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=700"
+                                class="w-100 h-100" style="object-fit:cover" alt="English Classes">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3"
+                                style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn
+                                    More</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">Summer English Classes</h5>
+                            <p class="text-secondary small">Coaching classes to emphasize the importance of English and
+                                computer literacy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100"
+                        data-bs-toggle="modal" data-bs-target="#workModal4" style="cursor:pointer">
+                        <div class="position-relative overflow-hidden" style="height:220px">
+                            <img src="https://images.unsplash.com/photo-1593113563332-f1440d99dcbb?q=80&w=700"
+                                class="w-100 h-100" style="object-fit:cover" alt="Relief">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3"
+                                style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn
+                                    More</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">Relief Work</h5>
+                            <p class="text-secondary small">Distributed food and essentials during crises and lockdown
+                                to those in desperate need.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100"
+                        data-bs-toggle="modal" data-bs-target="#workModal5" style="cursor:pointer">
+                        <div class="position-relative overflow-hidden" style="height:220px">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01c80cf8cb4?q=80&w=700"
+                                class="w-100 h-100" style="object-fit:cover" alt="Sham-e-Mulaqat">
+                            <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3"
+                                style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
+                                <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn
+                                    More</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-2">Sham-e-Mulaqat</h5>
+                            <p class="text-secondary small">Community gatherings connecting Malegaon natives and
+                                honoring our pioneers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100" data-bs-toggle="modal" data-bs-target="#workModal1" style="cursor:pointer">
-                    <div class="position-relative overflow-hidden" style="height:220px">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=700" class="w-100 h-100" style="object-fit:cover" alt="Urdu School">
-                        <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3" style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
-                            <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn More</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-2">Established an Urdu Medium School</h5>
-                        <p class="text-secondary small">A high-standard educational institution established to nurture the potential of Urdu-medium students.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100" data-bs-toggle="modal" data-bs-target="#workModal2" style="cursor:pointer">
-                    <div class="position-relative overflow-hidden" style="height:220px">
-                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=700" class="w-100 h-100" style="object-fit:cover" alt="Book Fair">
-                        <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3" style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
-                            <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn More</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-2">National Book Fairs</h5>
-                        <p class="text-secondary small">Organizing national-level Urdu book fairs and literary events to preserve culture.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100" data-bs-toggle="modal" data-bs-target="#workModal3" style="cursor:pointer">
-                    <div class="position-relative overflow-hidden" style="height:220px">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=700" class="w-100 h-100" style="object-fit:cover" alt="English Classes">
-                        <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3" style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
-                            <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn More</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-2">Summer English Classes</h5>
-                        <p class="text-secondary small">Coaching classes to emphasize the importance of English and computer literacy.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100" data-bs-toggle="modal" data-bs-target="#workModal4" style="cursor:pointer">
-                    <div class="position-relative overflow-hidden" style="height:220px">
-                        <img src="https://images.unsplash.com/photo-1593113563332-f1440d99dcbb?q=80&w=700" class="w-100 h-100" style="object-fit:cover" alt="Relief">
-                        <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3" style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
-                            <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn More</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-2">Relief Work</h5>
-                        <p class="text-secondary small">Distributed food and essentials during crises and lockdown to those in desperate need.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="work-card-item card border-0 shadow-sm rounded-4 overflow-hidden h-100" data-bs-toggle="modal" data-bs-target="#workModal5" style="cursor:pointer">
-                    <div class="position-relative overflow-hidden" style="height:220px">
-                        <img src="https://images.unsplash.com/photo-1511632765486-a01c80cf8cb4?q=80&w=700" class="w-100 h-100" style="object-fit:cover" alt="Sham-e-Mulaqat">
-                        <div class="position-absolute bottom-0 start-0 w-100 h-100 d-flex align-items-end p-3" style="background:linear-gradient(transparent,rgba(0,0,0,.6))">
-                            <span class="badge text-white px-3 py-2 rounded-pill" style="background:#EF5F34">Learn More</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-4">
-                        <h5 class="fw-bold mb-2">Sham-e-Mulaqat</h5>
-                        <p class="text-secondary small">Community gatherings connecting Malegaon natives and honoring our pioneers.</p>
-                    </div>
+    </section>
+
+    <!-- Work Modals -->
+    <div class="modal fade" id="workModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal"
+                    style="background-color:#fff;border-radius:50%;padding:8px"></button><img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=900" class="w-100"
+                    style="height:250px;object-fit:cover" alt="">
+                <div class="p-4">
+                    <h4 class="fw-bold">Established an Urdu Medium School</h4>
+                    <p class="text-secondary">Continuing its educational mission, the Society established a school in
+                        2013 in the heart of Malegaon, at School No. 1 Compound on Qidwai Road. Due to its high standard
+                        of education, the school quickly became one of the most preferred institutions in the city.</p>
+                    <p class="text-secondary">In 2016, a valuable plot of land reserved for educational purposes was
+                        purchased on Agra Road. Construction began in 2019 on approximately 10,000 square feet of land.
+                        Spacious classrooms, wide corridors, up-to-date computer and science laboratories, and clean
+                        sanitation facilities are among the key features.</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="modal fade" id="workModal2" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal"
+                    style="background-color:#fff;border-radius:50%;padding:8px"></button><img
+                    src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=900" class="w-100"
+                    style="height:250px;object-fit:cover" alt="">
+                <div class="p-4">
+                    <h4 class="fw-bold">National Book Fairs</h4>
+                    <p class="text-secondary">To promote the Urdu language, the Society organized National Urdu Book
+                        Fairs in Malegaon in 2014 and 2021 in collaboration with the National Council for Promotion of
+                        Urdu Language, New Delhi. These fairs significantly raised the standards, organization, and
+                        cultural value of book fairs in the country.</p>
+                    <p class="text-secondary">In 2024, the Society also fully supported Malegaon's first international
+                        literary festival, "Rashk-e-Baharan."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="workModal3" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal"
+                    style="background-color:#fff;border-radius:50%;padding:8px"></button><img
+                    src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=900" class="w-100"
+                    style="height:250px;object-fit:cover" alt="">
+                <div class="p-4">
+                    <h4 class="fw-bold">Summer English Classes</h4>
+                    <p class="text-secondary">Understanding the importance of the English language, the Society
+                        conducted coaching classes for several years during the summer vacations. Its computer centre is
+                        also counted among the earliest computer centres in the city.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="workModal4" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal"
+                    style="background-color:#fff;border-radius:50%;padding:8px"></button><img
+                    src="https://images.unsplash.com/photo-1593113563332-f1440d99dcbb?q=80&w=900" class="w-100"
+                    style="height:250px;object-fit:cover" alt="">
+                <div class="p-4">
+                    <h4 class="fw-bold">Relief Work</h4>
+                    <p class="text-secondary">In addition, the Society has actively participated in various educational
+                        and welfare activities in the city. During the lockdown, it quietly collaborated with other
+                        organizations to distribute food supplies worth millions of rupees to those in need — especially
+                        to individuals who, due to self-respect, could not ask for help.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="workModal5" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button
+                    class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal"
+                    style="background-color:#fff;border-radius:50%;padding:8px"></button><img
+                    src="https://images.unsplash.com/photo-1511632765486-a01c80cf8cb4?q=80&w=900" class="w-100"
+                    style="height:250px;object-fit:cover" alt="">
+                <div class="p-4">
+                    <h4 class="fw-bold">Sham-e-Mulaqat</h4>
+                    <p class="text-secondary">To bring together people from Malegaon residing in Mumbai, the Society
+                        initiated a series of gatherings titled "Shaam-e-Mulaqat" in 2011. The second event was held in
+                        2014, third in 2018 marking 75 years, and the fourth Shaam-e-Mulaqat was held on Saturday 13th
+                        December 2025.</p>
+                    <p class="text-secondary">During these events, we remember our pioneers — those who made it possible
+                        for us to reach where we are today. We believe the best tribute to them is to carry forward
+                        their mission.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- Work Modals -->
-<div class="modal fade" id="workModal1" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" style="background-color:#fff;border-radius:50%;padding:8px"></button><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=900" class="w-100" style="height:250px;object-fit:cover" alt=""><div class="p-4"><h4 class="fw-bold">Established an Urdu Medium School</h4><p class="text-secondary">Continuing its educational mission, the Society established a school in 2013 in the heart of Malegaon, at School No. 1 Compound on Qidwai Road. Due to its high standard of education, the school quickly became one of the most preferred institutions in the city.</p><p class="text-secondary">In 2016, a valuable plot of land reserved for educational purposes was purchased on Agra Road. Construction began in 2019 on approximately 10,000 square feet of land. Spacious classrooms, wide corridors, up-to-date computer and science laboratories, and clean sanitation facilities are among the key features.</p></div></div></div></div>
-<div class="modal fade" id="workModal2" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" style="background-color:#fff;border-radius:50%;padding:8px"></button><img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?q=80&w=900" class="w-100" style="height:250px;object-fit:cover" alt=""><div class="p-4"><h4 class="fw-bold">National Book Fairs</h4><p class="text-secondary">To promote the Urdu language, the Society organized National Urdu Book Fairs in Malegaon in 2014 and 2021 in collaboration with the National Council for Promotion of Urdu Language, New Delhi. These fairs significantly raised the standards, organization, and cultural value of book fairs in the country.</p><p class="text-secondary">In 2024, the Society also fully supported Malegaon's first international literary festival, "Rashk-e-Baharan."</p></div></div></div></div>
-<div class="modal fade" id="workModal3" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" style="background-color:#fff;border-radius:50%;padding:8px"></button><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=900" class="w-100" style="height:250px;object-fit:cover" alt=""><div class="p-4"><h4 class="fw-bold">Summer English Classes</h4><p class="text-secondary">Understanding the importance of the English language, the Society conducted coaching classes for several years during the summer vacations. Its computer centre is also counted among the earliest computer centres in the city.</p></div></div></div></div>
-<div class="modal fade" id="workModal4" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" style="background-color:#fff;border-radius:50%;padding:8px"></button><img src="https://images.unsplash.com/photo-1593113563332-f1440d99dcbb?q=80&w=900" class="w-100" style="height:250px;object-fit:cover" alt=""><div class="p-4"><h4 class="fw-bold">Relief Work</h4><p class="text-secondary">In addition, the Society has actively participated in various educational and welfare activities in the city. During the lockdown, it quietly collaborated with other organizations to distribute food supplies worth millions of rupees to those in need — especially to individuals who, due to self-respect, could not ask for help.</p></div></div></div></div>
-<div class="modal fade" id="workModal5" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content rounded-4 overflow-hidden border-0 shadow-lg"><button class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" style="background-color:#fff;border-radius:50%;padding:8px"></button><img src="https://images.unsplash.com/photo-1511632765486-a01c80cf8cb4?q=80&w=900" class="w-100" style="height:250px;object-fit:cover" alt=""><div class="p-4"><h4 class="fw-bold">Sham-e-Mulaqat</h4><p class="text-secondary">To bring together people from Malegaon residing in Mumbai, the Society initiated a series of gatherings titled "Shaam-e-Mulaqat" in 2011. The second event was held in 2014, third in 2018 marking 75 years, and the fourth Shaam-e-Mulaqat was held on Saturday 13th December 2025.</p><p class="text-secondary">During these events, we remember our pioneers — those who made it possible for us to reach where we are today. We believe the best tribute to them is to carry forward their mission.</p></div></div></div></div>
-
-<!-- ═══════════════════════════════════════════
+    <!-- ═══════════════════════════════════════════
      SECTION 5: IMPACT STATS (sixthSectionAbout.jsx)
      10,000+ students | 80+ years | 1 school | 50+ events
 ═══════════════════════════════════════════ -->
-<section class="impact-section py-5 text-white position-relative overflow-hidden"
-         style="background:linear-gradient(rgba(18,14,54,.85),rgba(18,14,54,.85)),url('images/thirdsection.png') center/cover fixed">
-    <div class="container py-5 text-center position-relative" style="z-index:1">
-        <h2 class="fw-bold mb-2" data-aos="fade-down">Our Impact</h2>
-        <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:0 auto 1rem;" data-aos="fade-down" data-aos-delay="50"></div>
-        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">Decades of dedication, countless lives changed</p>
-        <div class="row g-4">
-            <div class="col-md-3 col-6" data-aos="zoom-in">
-                <div class="p-4 rounded-4" style="background:rgba(255,255,255,.05);border:1px solid rgba(239,95,52,.3)">
-                    <div class="fs-1 mb-2">👨‍🎓</div>
-                    <h2 class="fw-bold" style="color:#EF5F34">10,000+</h2>
-                    <p class="text-uppercase small text-white-50 mb-0">Students Supported</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
-                <div class="p-4 rounded-4" style="background:rgba(255,255,255,.05);border:1px solid rgba(239,95,52,.3)">
-                    <div class="fs-1 mb-2">⭐</div>
-                    <h2 class="fw-bold" style="color:#EF5F34">80+</h2>
-                    <p class="text-uppercase small text-white-50 mb-0">Years of Service</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
-                <div class="p-4 rounded-4" style="background:rgba(255,255,255,.05);border:1px solid rgba(239,95,52,.3)">
-                    <div class="fs-1 mb-2">🏫</div>
-                    <h2 class="fw-bold" style="color:#EF5F34">1</h2>
-                    <p class="text-uppercase small text-white-50 mb-0">School Established</p>
-                </div>
-            </div>
-            <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
-                <div class="p-4 rounded-4" style="background:rgba(255,255,255,.05);border:1px solid rgba(239,95,52,.3)">
-                    <div class="fs-1 mb-2">🤝</div>
-                    <h2 class="fw-bold" style="color:#EF5F34">50+</h2>
-                    <p class="text-uppercase small text-white-50 mb-0">Community Events</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <section class="impact-section py-5 bg-white position-relative overflow-hidden">
+        <div class="container py-5 text-center position-relative" style="z-index:1">
+            <h2 class="fw-bold mb-2 text-dark">Our Impact</h2>
+            <div style="width:60px;height:4px;background:#EF5F34;border-radius:2px;margin:0 auto 1rem;"></div>
+            <p class="text-secondary mb-5">Decades of dedication, countless lives changed</p>
 
-<!-- FOOTER -->
-<footer class="modern-footer">
-    <div class="container py-5">
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
-                <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
-                <p class="footer-desc">Welcome to Malegan Education Society. Empowering the community through knowledge, dedication, and impactful initiatives since 1943.</p>
-                <div class="social-buttons d-flex gap-2">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 shadow-sm"
+                        style="background:rgba(239,95,52,.04);border:1px solid rgba(239,95,52,.15)">
+                        <div class="fs-1 mb-2">👨‍🎓</div>
+                        <h2 class="fw-bold" style="color:#EF5F34">10,000+</h2>
+                        <p class="text-uppercase small text-secondary mb-0 fw-semibold">Students Supported</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="footer-heading">Quick Links</h3>
-                <ul class="footer-links list-unstyled mt-3">
-                    <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
-                    <li class="mb-2"><a href="projects.html" class="text-decoration-none">Impact</a></li>
-                    <li class="mb-2"><a href="founders.html" class="text-decoration-none">Leadership</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="footer-heading">Contact Info</h3>
-                <div class="d-flex gap-3 mb-3 mt-3">
-                    <i class="fas fa-envelope mt-1 text-orange"></i>
-                    <span class="small">TheEducationSocietyofMalegoan@gmail.com</span>
-                </div>
-                <div class="d-flex gap-3 mb-3">
-                    <i class="fas fa-phone-alt text-orange"></i>
-                    <span class="small">+888 (123) 869523</span>
-                </div>
-                <div class="d-flex gap-3">
-                    <i class="fas fa-map-marker-alt text-orange"></i>
-                    <span class="small">Malegaon, Maharashtra, India</span>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="footer-heading">Newsletter</h3>
-                <p class="small opacity-75 mt-3">Join our community to stay updated.</p>
-                <div class="input-group mt-3">
-                    <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="email address">
-                    <button class="btn btn-orange text-white" type="button">Join</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="py-3" style="background: rgba(0,0,0,0.2);">
-        <div class="container text-center">
-            <p class="mb-0 small opacity-50">© 2026 Malegaon Education Society. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/main.js"></script>
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 shadow-sm"
+                        style="background:rgba(239,95,52,.04);border:1px solid rgba(239,95,52,.15)">
+                        <div class="fs-1 mb-2">⭐</div>
+                        <h2 class="fw-bold" style="color:#EF5F34">80+</h2>
+                        <p class="text-uppercase small text-secondary mb-0 fw-semibold">Years of Service</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 shadow-sm"
+                        style="background:rgba(239,95,52,.04);border:1px solid rgba(239,95,52,.15)">
+                        <div class="fs-1 mb-2">🏫</div>
+                        <h2 class="fw-bold" style="color:#EF5F34">1</h2>
+                        <p class="text-uppercase small text-secondary mb-0 fw-semibold">School Established</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6">
+                    <div class="p-4 rounded-4 shadow-sm"
+                        style="background:rgba(239,95,52,.04);border:1px solid rgba(239,95,52,.15)">
+                        <div class="fs-1 mb-2">🤝</div>
+                        <h2 class="fw-bold" style="color:#EF5F34">50+</h2>
+                        <p class="text-uppercase small text-secondary mb-0 fw-semibold">Community Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="modern-footer">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 footer-col" data-aos="fade-up">
+                    <img src="images/MSEFooterLogoo.png" alt="Logo" class="footer-logo mb-3" style="height:70px">
+                    <p class="footer-desc">Welcome to Malegan Education Society. Empowering the community through
+                        knowledge, dedication, and impactful initiatives since 1943.</p>
+                    <div class="social-buttons d-flex gap-2">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links list-unstyled mt-3">
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="projects.html" class="text-decoration-none">Impact</a></li>
+                        <li class="mb-2"><a href="founders.html" class="text-decoration-none">Leadership</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <div class="d-flex gap-3 mb-3 mt-3">
+                        <i class="fas fa-envelope mt-1 text-orange"></i>
+                        <span class="small">TheEducationSocietyofMalegoan@gmail.com</span>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <i class="fas fa-phone-alt text-orange"></i>
+                        <span class="small">+888 (123) 869523</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <i class="fas fa-map-marker-alt text-orange"></i>
+                        <span class="small">Malegaon, Maharashtra, India</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p class="small opacity-75 mt-3">Join our community to stay updated.</p>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="email address">
+                        <button class="btn btn-orange text-white" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-3" style="background: rgba(0,0,0,0.2);">
+            <div class="container text-center">
+                <p class="mb-0 small opacity-50">© 2026 Malegaon Education Society. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
